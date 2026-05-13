@@ -41,7 +41,7 @@
 
     <main id="menu-shell" class="board-shell fairy-board">
       <section class="scene fairy-menu-scene" aria-labelledby="fairy-menu-title">
-        <div class="menu-stage">
+        <div class="menu-stage homm2-main-menu-stage">
           <div class="scene-plaque scene-plaque-left">Главный экран · Сказочные странствия</div>
 
           <div class="menu-backdrop" aria-hidden="true">
@@ -53,129 +53,168 @@
             <span class="backdrop-path"></span>
           </div>
 
-          <aside class="status-rail" aria-label="Статус похода">
-            <div class="status-rail-head">Состояние пути</div>
-            <div class="status-box">
-              <span class="status-label">Тема</span>
-              <strong>поиск себя через сказочные миры</strong>
-            </div>
-            <div class="status-box">
-              <span class="status-label">Локация</span>
-              <strong>лес у древних врат</strong>
-            </div>
-            <div class="status-box">
-              <span class="status-label">Сигнал</span>
-              <strong>внутренний компас пробуждён</strong>
-            </div>
-          </aside>
+          <div class="menu-frame-shell">
+            <div class="frame-beam frame-beam-top" aria-hidden="true"></div>
+            <div class="frame-beam frame-beam-bottom" aria-hidden="true"></div>
 
-          <section class="menu-keep" aria-labelledby="fairy-menu-title">
-            <div class="menu-crest">
-              <span>⚜</span>
-            </div>
-            <div class="menu-title-cartouche">
-              <p class="eyebrow">main menu · self-seeking tale</p>
-              <h1 id="fairy-menu-title">Найти себя в сказочных странствиях.</h1>
-              <p class="lead">
-                Экран ощущается как главное меню игры: тёмное дерево, латунные рамки,
-                пергаментные поля и маршрут в неизвестность, где каждая глава — не карточка,
-                а выбор следующего сказочного пути.
-              </p>
-            </div>
+            <div class="frame-corner corner-tl" aria-hidden="true"></div>
+            <div class="frame-corner corner-tr" aria-hidden="true"></div>
+            <div class="frame-corner corner-bl" aria-hidden="true"></div>
+            <div class="frame-corner corner-br" aria-hidden="true"></div>
 
-            <div class="game-menu-stack" role="navigation" aria-label="Главные игровые команды">
-              <a class="game-menu-button primary" href="#final-threshold">
-                <span class="game-menu-glyph">✦</span>
-                <span>
-                  <strong>New Journey</strong>
-                  <small>начать личное сказочное странствие</small>
-                </span>
-              </a>
-              <a class="game-menu-button" href="#trail-log">
-                <span class="game-menu-glyph">II</span>
-                <span>
-                  <strong>Continue</strong>
-                  <small>вернуться к лесу дорог и текущей главе</small>
-                </span>
-              </a>
-              <a class="game-menu-button" href="#story-dossier">
-                <span class="game-menu-glyph">III</span>
-                <span>
-                  <strong>Archive</strong>
-                  <small>открыть сказочный журнал и символы пути</small>
-                </span>
-              </a>
-              <a class="game-menu-button" href="#command-rail">
-                <span class="game-menu-glyph">IV</span>
-                <span>
-                  <strong>Companions</strong>
-                  <small>собрать мудреца, трикстера, хранителя и тень</small>
-                </span>
-              </a>
-              <a class="game-menu-button utility" href="./index.html">
-                <span class="game-menu-glyph">V</span>
-                <span>
-                  <strong>Settings / Closeout</strong>
-                  <small>вернуться в sandbox и сравнить режимы</small>
-                </span>
-              </a>
-            </div>
+            <aside class="side-column side-column-left">
+              <div class="column-cap" aria-hidden="true"></div>
+              <div class="column-core">
+                <div class="column-ribs" aria-hidden="true"></div>
+                <div class="column-trim column-trim-top" aria-hidden="true"></div>
+                <div class="column-trim column-trim-bottom" aria-hidden="true"></div>
 
-            <div class="menu-plaques" role="navigation" aria-label="Основные разделы путешествия">
-              <a class="menu-plaque active" href="#trail-log">
-                <span class="plaque-index">I</span>
-                <strong>Войти в лес дорог</strong>
-                <small>первый след и зов истории</small>
-              </a>
-              <a class="menu-plaque" href="#story-dossier">
-                <span class="plaque-index">II</span>
-                <strong>Открыть сказочный архив</strong>
-                <small>символы, роли, внутренние имена</small>
-              </a>
-              <a class="menu-plaque" href="#command-rail">
-                <span class="plaque-index">III</span>
-                <strong>Собрать команду спутников</strong>
-                <small>мудрец, трикстер, хранитель, тень</small>
-              </a>
-              <a class="menu-plaque ceremonial" href="#final-threshold">
-                <span class="plaque-index">IV</span>
-                <strong>Принять зов тропы</strong>
-                <small>ритуал перехода и личный выбор</small>
-              </a>
-            </div>
+                <div class="status-rail" aria-label="Статус похода">
+                  <div class="status-rail-head">Состояние пути</div>
+                  <div class="status-box">
+                    <span class="status-label">Тема</span>
+                    <strong>поиск себя через сказочные миры</strong>
+                  </div>
+                  <div class="status-box">
+                    <span class="status-label">Локация</span>
+                    <strong>лес у древних врат</strong>
+                  </div>
+                  <div class="status-box">
+                    <span class="status-label">Сигнал</span>
+                    <strong>внутренний компас пробуждён</strong>
+                  </div>
+                </div>
+              </div>
+              <div class="column-foot" aria-hidden="true"></div>
+            </aside>
 
-            <div class="save-slot-strip" aria-label="Текущий слот">
-              <span>Save slot A</span>
-              <strong>лес у древних врат · глава 1 · тихая отвага</strong>
-            </div>
-          </section>
+            <section class="menu-center-mount" aria-labelledby="fairy-menu-title">
+              <div class="center-top-cartouche">
+                <div class="menu-crest">
+                  <span>⚜</span>
+                </div>
+                <div class="menu-title-cartouche">
+                  <p class="eyebrow">main menu · self-seeking tale</p>
+                  <h1 id="fairy-menu-title">Найти себя в сказочных странствиях.</h1>
+                  <p class="lead">
+                    Экран ощущается как главное меню игры: тёмное дерево, латунные рамки,
+                    пергаментные поля и маршрут в неизвестность, где каждая глава — не карточка,
+                    а выбор следующего сказочного пути.
+                  </p>
+                </div>
+              </div>
 
-          <aside class="command-rail-shell" id="command-rail" aria-label="Командная рейка">
-            <div class="command-rail-head">Command rail</div>
-            <div class="command-entry">
-              <span>Quest</span>
-              <strong>собрать карту своего мифа</strong>
-            </div>
-            <div class="command-entry">
-              <span>Companions</span>
-              <strong>4 архетипа в дозоре</strong>
-            </div>
-            <div class="command-entry">
-              <span>Difficulty</span>
-              <strong>тихая отвага</strong>
-            </div>
-            <div class="command-entry">
-              <span>Mode</span>
-              <strong>main menu / chapter select</strong>
-            </div>
-            <div class="mini-command-grid" aria-label="Быстрые команды">
-              <button type="button" class="mini-command">load</button>
-              <button type="button" class="mini-command">map</button>
-              <button type="button" class="mini-command">lore</button>
-              <button type="button" class="mini-command">quit</button>
-            </div>
-            <button type="button" class="btn btn-ceremonial rail-button">Начать странствие</button>
-          </aside>
+              <div class="menu-plate-shell">
+                <div class="menu-plate-shadow" aria-hidden="true"></div>
+                <div class="menu-plate-body">
+                  <div class="game-menu-stack" role="navigation" aria-label="Главные игровые команды">
+                    <a class="game-menu-button primary" href="#final-threshold">
+                      <span class="game-menu-glyph">✦</span>
+                      <span>
+                        <strong>New Journey</strong>
+                        <small>начать личное сказочное странствие</small>
+                      </span>
+                    </a>
+                    <a class="game-menu-button" href="#trail-log">
+                      <span class="game-menu-glyph">II</span>
+                      <span>
+                        <strong>Continue</strong>
+                        <small>вернуться к лесу дорог и текущей главе</small>
+                      </span>
+                    </a>
+                    <a class="game-menu-button" href="#story-dossier">
+                      <span class="game-menu-glyph">III</span>
+                      <span>
+                        <strong>Archive</strong>
+                        <small>открыть сказочный журнал и символы пути</small>
+                      </span>
+                    </a>
+                    <a class="game-menu-button" href="#command-rail">
+                      <span class="game-menu-glyph">IV</span>
+                      <span>
+                        <strong>Companions</strong>
+                        <small>собрать мудреца, трикстера, хранителя и тень</small>
+                      </span>
+                    </a>
+                    <a class="game-menu-button utility" href="./index.html">
+                      <span class="game-menu-glyph">V</span>
+                      <span>
+                        <strong>Settings / Closeout</strong>
+                        <small>вернуться в sandbox и сравнить режимы</small>
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="supporting-lore-strip">
+                <div class="save-slot-strip" aria-label="Текущий слот">
+                  <span>Save slot A</span>
+                  <strong>лес у древних врат · глава 1 · тихая отвага</strong>
+                </div>
+
+                <div class="menu-plaques" role="navigation" aria-label="Основные разделы путешествия">
+                  <a class="menu-plaque active" href="#trail-log">
+                    <span class="plaque-index">I</span>
+                    <strong>Войти в лес дорог</strong>
+                    <small>первый след и зов истории</small>
+                  </a>
+                  <a class="menu-plaque" href="#story-dossier">
+                    <span class="plaque-index">II</span>
+                    <strong>Открыть сказочный архив</strong>
+                    <small>символы, роли, внутренние имена</small>
+                  </a>
+                  <a class="menu-plaque" href="#command-rail">
+                    <span class="plaque-index">III</span>
+                    <strong>Собрать команду спутников</strong>
+                    <small>мудрец, трикстер, хранитель, тень</small>
+                  </a>
+                  <a class="menu-plaque ceremonial" href="#final-threshold">
+                    <span class="plaque-index">IV</span>
+                    <strong>Принять зов тропы</strong>
+                    <small>ритуал перехода и личный выбор</small>
+                  </a>
+                </div>
+              </div>
+            </section>
+
+            <aside class="side-column side-column-right" id="command-rail">
+              <div class="column-cap" aria-hidden="true"></div>
+              <div class="column-core">
+                <div class="column-ribs" aria-hidden="true"></div>
+                <div class="column-trim column-trim-top" aria-hidden="true"></div>
+                <div class="column-trim column-trim-bottom" aria-hidden="true"></div>
+
+                <div class="command-rail-shell" aria-label="Командная рейка">
+                  <div class="command-rail-head">Command rail</div>
+                  <div class="command-entry">
+                    <span>Quest</span>
+                    <strong>собрать карту своего мифа</strong>
+                  </div>
+                  <div class="command-entry">
+                    <span>Companions</span>
+                    <strong>4 архетипа в дозоре</strong>
+                  </div>
+                  <div class="command-entry">
+                    <span>Difficulty</span>
+                    <strong>тихая отвага</strong>
+                  </div>
+                  <div class="command-entry">
+                    <span>Mode</span>
+                    <strong>main menu / chapter select</strong>
+                  </div>
+                  <div class="mini-command-grid" aria-label="Быстрые команды">
+                    <button type="button" class="mini-command">load</button>
+                    <button type="button" class="mini-command">map</button>
+                    <button type="button" class="mini-command">lore</button>
+                    <button type="button" class="mini-command">quit</button>
+                  </div>
+                  <button type="button" class="btn btn-ceremonial rail-button">Начать странствие</button>
+                </div>
+              </div>
+              <div class="column-foot" aria-hidden="true"></div>
+            </aside>
+          </div>
         </div>
       </section>
 
