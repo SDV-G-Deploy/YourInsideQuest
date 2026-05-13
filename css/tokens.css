@@ -1,0 +1,264 @@
+/* ============================================================================
+   HOMM2 Design System — Token Contract
+   ----------------------------------------------------------------------------
+   Three layers:
+     1. PRIMITIVES — raw colors in channel-space (R G B). Never used directly
+        in components. Use inside rgb(...) / rgb(... / alpha).
+     2. SCALES     — space, type, motion, radius. Numeric design decisions.
+     3. SEMANTIC   — what components actually reference. Themes/factions
+                     override THIS layer, never the primitives.
+
+   Usage:
+     color:      rgb(var(--gold-300));
+     background: rgb(var(--gold-300) / 0.24);
+     border:     1px solid rgb(var(--gold-700) / 0.42);
+   ============================================================================ */
+
+:root {
+  /* ==========================================================================
+     LAYER 1 — PRIMITIVES (R G B channels)
+     ========================================================================== */
+
+  /* Ink — darkness, shadow, deep night */
+  --ink-700: 58 36 24;    /* #3a2418 */
+  --ink-800: 45 29 20;    /* #2d1d14   (was ink-760) */
+  --ink-900: 23 16 12;    /* #17100c */
+  --ink-950: 12 9 7;      /* #0c0907 */
+
+  /* Parchment — warm paper light */
+  --parchment-50:  255 246 220;   /* #fff6dc */
+  --parchment-100: 243 226 184;   /* #f3e2b8 */
+  --parchment-200: 227 201 141;   /* #e3c98d   (was parchment-180) */
+  --parchment-300: 189 150 88;    /* #bd9658   (was parchment-240) */
+
+  /* Gold — value, reward, ceremonial */
+  --gold-300: 244 199 90;         /* #f4c75a */
+  --gold-500: 217 154 43;         /* #d99a2b */
+  --gold-700: 139 85 23;          /* #8b5517 */
+
+  /* Mana — consequence, magic, focus */
+  --mana-200: 158 215 255;        /* #9ed7ff */
+  --mana-400: 62 157 222;         /* #3e9dde */
+  --mana-900: 11 27 58;           /* #0b1b3a */
+
+  /* Stone — structure, weight */
+  --stone-200: 201 196 182;       /* #c9c4b6 */
+  --stone-500: 143 137 126;       /* #8f897e */
+  --stone-700: 89 84 76;          /* #59544c */
+
+  /* Accents — reserved, used sparingly */
+  --crimson-800:   122 31 27;     /* #7a1f1b   wax seal, warning  */
+  --moss-700:      49 76 44;      /* #314c2c   life, success      */
+  --field-200:     201 184 107;   /* #c9b86b   tapestry           */
+  --verdigris-700: 29 90 88;      /* #1d5a58   aged bronze        */
+
+  /* ==========================================================================
+     LAYER 2 — SCALES
+     ========================================================================== */
+
+  /* Space — 4px base, perceptual jumps */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+
+  /* Type — fluid by default */
+  --text-eyebrow: 12px;
+  --text-caption: 13px;
+  --text-body:    clamp(17px, 1.75vw, 22px);
+  --text-lead:    clamp(18px, 1.9vw,  24px);
+  --text-h3:      clamp(24px, 2.7vw,  38px);
+  --text-h2:      clamp(38px, 5.7vw,  72px);
+  --text-display: clamp(52px, 8.2vw, 112px);
+
+  /* Tracking */
+  --tracking-display: -0.048em;
+  --tracking-h2:      -0.035em;
+  --tracking-h3:      -0.018em;
+  --tracking-wide:     0.045em;
+  --tracking-wider:    0.085em;
+  --tracking-eyebrow:  0.18em;
+
+  /* Leading */
+  --leading-display: 0.88;
+  --leading-h2:      0.98;
+  --leading-h3:      1.02;
+  --leading-body:    1.66;
+  --leading-prose:   1.72;
+
+  /* Faces */
+  --font-display: "Cinzel", Georgia, serif;
+  --font-body:    "Lora",   Georgia, serif;
+
+  /* Motion */
+  --duration-quick:      120ms;
+  --duration-base:       200ms;
+  --duration-ceremonial: 600ms;
+  --ease-out:        cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-ceremonial: cubic-bezier(0.7, 0, 0.3, 1);
+
+  /* Radius — tighter, more plaque-like than SaaS-soft */
+  --radius-xs:   3px;
+  --radius-sm:   6px;
+  --radius-md:   8px;
+  --radius-lg:   12px;
+  --radius-xl:   16px;
+  --radius-pill: 999px;
+
+  /* Shape / bevel */
+  --bevel-sm: 5px;
+  --bevel-md: 8px;
+  --bevel-lg: 12px;
+  --shape-bevel-sm: polygon(0 var(--bevel-sm), var(--bevel-sm) 0, calc(100% - var(--bevel-sm)) 0, 100% var(--bevel-sm), 100% calc(100% - var(--bevel-sm)), calc(100% - var(--bevel-sm)) 100%, var(--bevel-sm) 100%, 0 calc(100% - var(--bevel-sm)));
+  --shape-bevel-md: polygon(0 var(--bevel-md), var(--bevel-md) 0, calc(100% - var(--bevel-md)) 0, 100% var(--bevel-md), 100% calc(100% - var(--bevel-md)), calc(100% - var(--bevel-md)) 100%, var(--bevel-md) 100%, 0 calc(100% - var(--bevel-md)));
+  --shape-bevel-lg: polygon(0 var(--bevel-lg), var(--bevel-lg) 0, calc(100% - var(--bevel-lg)) 0, 100% var(--bevel-lg), 100% calc(100% - var(--bevel-lg)), calc(100% - var(--bevel-lg)) 100%, var(--bevel-lg) 100%, 0 calc(100% - var(--bevel-lg)));
+
+  /* Frame / pixel-stepped construction */
+  --frame-outer: 2px;
+  --frame-inner: 1px;
+  --frame-inset: 10px;
+  --pixel-step: 2px;
+  --ornament-gap: 14px;
+
+  /* Heraldic Menu — menu plaques, crest frames, command depth */
+  --menu-plaque-height: 42px;
+  --menu-plaque-padding-x: 16px;
+  --menu-plaque-border: 1px;
+  --menu-plaque-inset: 2px;
+  --menu-plaque-shadow: 0 8px 0 rgb(var(--ink-950) / 0.14),
+                        0 12px 20px rgb(var(--ink-950) / 0.16);
+
+  --frame-rail-thickness: 2px;
+  --frame-corner-cut: 10px;
+  --frame-inner-inset-deep: 14px;
+  --ornament-anchor-size: 18px;
+  --sigil-medallion-size: 48px;
+
+  --press-depth-rest: 0 3px 0 rgb(var(--ink-950) / 0.24);
+  --press-depth-hover: 0 2px 0 rgb(var(--gold-700) / 0.30);
+  --press-depth-active: 0 1px 0 rgb(var(--ink-950) / 0.18);
+  --press-highlight-top: inset 0 1px 0 rgb(var(--parchment-50) / 0.18);
+  --press-shadow-bottom: inset 0 -2px 0 rgb(var(--ink-950) / 0.30);
+
+  /* Layout / authored measures */
+  --page: min(1180px, calc(100vw - 32px));
+  --measure-prose: 64ch;
+  --measure-intro: 58ch;
+  --measure-note: 30ch;
+  --measure-ritual: 34ch;
+
+  /* ==========================================================================
+     LAYER 3 — SEMANTIC TOKENS
+     This is the override surface for themes / factions.
+     ========================================================================== */
+
+  /* Surfaces */
+  --surface-night:     rgb(var(--ink-950));
+  --surface-parchment: rgb(var(--parchment-100));
+  --surface-stone:     rgb(var(--stone-700));
+  --surface-ritual:    rgb(var(--mana-900) / 0.72);
+
+  /* Text on surfaces */
+  --ink-on-night:      rgb(var(--parchment-50));
+  --ink-on-night-soft: rgb(var(--parchment-50) / 0.82);
+  --ink-on-night-mute: rgb(var(--parchment-50) / 0.68);
+  --ink-on-night-dim:  rgb(var(--parchment-50) / 0.42);
+
+  --ink-on-parchment:      rgb(var(--ink-700));
+  --ink-on-parchment-soft: rgb(var(--ink-700) / 0.72);
+
+  --ink-on-gold: rgb(var(--ink-900));
+
+  /* Accents — semantic intent */
+  --accent-value:            rgb(var(--gold-300));
+  --accent-value-deep:       rgb(var(--gold-500));
+  --accent-value-mute:       rgb(var(--gold-700));
+  --accent-consequence:      rgb(var(--mana-400));
+  --accent-consequence-soft: rgb(var(--mana-200));
+  --accent-warning:          rgb(var(--crimson-800));
+  --accent-success:          rgb(var(--moss-700));
+
+  /* Borders */
+  --border-thin:         rgb(var(--parchment-50) / 0.12);
+  --border-thin-warm:    rgb(var(--gold-300) / 0.30);
+  --border-ceremonial:   rgb(var(--gold-300) / 0.45);
+  --border-on-parchment: rgb(var(--gold-700) / 0.42);
+
+  /* Product-facing surface aliases — closer to the canonical docs */
+  --surface-default:     var(--surface-parchment);
+  --surface-subtle:      rgb(var(--parchment-50) / 0.72);
+  --surface-elevated:    rgb(var(--stone-200));
+  --surface-panel:       rgb(var(--stone-700));
+  --surface-premium:     rgb(var(--gold-300));
+  --surface-focus:       rgb(var(--mana-200) / 0.14);
+  --surface-destructive: rgb(var(--crimson-800) / 0.18);
+
+  /* Text aliases */
+  --text-primary-on-light:   var(--ink-on-parchment);
+  --text-secondary-on-light: var(--ink-on-parchment-soft);
+  --text-primary-on-dark:    var(--ink-on-night);
+  --text-secondary-on-dark:  var(--ink-on-night-soft);
+  --text-muted-on-dark:      var(--ink-on-night-mute);
+
+  /* Border roles */
+  --border-soft:      var(--border-thin);
+  --border-strong:    var(--border-thin-warm);
+  --border-heavy:     rgb(var(--gold-700) / 0.42);
+  --border-ornament:  var(--border-ceremonial);
+
+  /* Status roles */
+  --status-success: var(--accent-success);
+  --status-warning: var(--accent-warning);
+  --status-danger:  var(--accent-warning);
+  --status-info:    var(--accent-consequence);
+
+  /* Shape roles */
+  --shape-interactive: var(--shape-bevel-sm);
+  --shape-panel:       var(--shape-bevel-md);
+  --shape-hero:        var(--shape-bevel-lg);
+
+  /* Shadows */
+  --shadow-resting:     0 10px 0 rgb(var(--ink-950) / 0.16),
+                        0 18px 34px rgb(var(--ink-900) / 0.34);
+  --shadow-elevated:    0 14px 0 rgb(var(--ink-950) / 0.18),
+                        0 34px 72px rgb(0 0 0 / 0.44);
+  --shadow-ceremonial:  0 0 44px rgb(var(--mana-400) / 0.16),
+                        0 16px 0 rgb(var(--ink-950) / 0.22),
+                        0 28px 70px rgb(0 0 0 / 0.46);
+  --shadow-inset-edge:  inset 0 1px 0 rgb(var(--parchment-50) / 0.16),
+                        inset 0 -1px 0 rgb(var(--ink-950) / 0.26);
+
+  /* Glow discipline — quiet by default; consequence raises local intensity */
+  --glow-mana-restraint: rgb(var(--mana-400) / 0.12);
+  --glow-mana-focus:     rgb(var(--mana-400) / 0.22);
+  --glow-gold-reward:    rgb(var(--gold-300) / 0.24);
+
+  /* Focus ring */
+  --ring-focus:      rgb(var(--mana-200));
+  --ring-focus-halo: rgb(var(--mana-400) / 0.22);
+}
+
+/* ==========================================================================
+   RESPONSIVE TOKEN OVERRIDES
+   Fluid type/space scales pick up automatically via clamp();
+   only override the structural tokens.
+   ========================================================================== */
+
+@media (max-width: 560px) {
+  :root {
+    --page:      min(100vw - 20px, 1180px);
+    --radius-xl: 16px;
+    --radius-lg: 12px;
+  }
+}
+
+@media (max-width: 380px) {
+  :root {
+    --page: min(100vw - 16px, 1180px);
+  }
+}
