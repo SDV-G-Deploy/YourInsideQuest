@@ -919,7 +919,7 @@
 
 .homm2-main-menu-stage {
   display: block;
-  padding: clamp(22px, 3vw, 34px);
+  padding: clamp(18px, 2.4vw, 26px);
 }
 
 .homm2-main-menu-stage > .scene-plaque {
@@ -931,12 +931,12 @@
   z-index: 2;
   display: grid;
   grid-template-columns: minmax(210px, 250px) minmax(540px, 720px) minmax(210px, 250px);
-  gap: clamp(20px, 2.6vw, 32px);
+  gap: clamp(18px, 2.2vw, 28px);
   align-items: stretch;
   width: 100%;
   max-width: 100%;
-  min-height: 780px;
-  padding: clamp(56px, 6vw, 78px) clamp(26px, 3vw, 38px) clamp(42px, 5vw, 56px);
+  min-height: clamp(630px, 64vw, 680px);
+  padding: clamp(36px, 3.5vw, 44px) clamp(22px, 2.6vw, 34px) clamp(24px, 2.7vw, 30px);
   overflow: hidden;
   contain: layout paint;
 }
@@ -961,7 +961,7 @@
 .menu-frame-shell::before {
   content: "";
   position: absolute;
-  inset: 26px 18px 22px;
+  inset: 20px 16px 18px;
   border: 1px solid rgb(var(--gold-700) / 0.2);
   clip-path: var(--shape-hero);
   box-shadow: inset 0 0 0 1px rgb(var(--parchment-50) / 0.05);
@@ -971,7 +971,7 @@
 .menu-frame-shell::after {
   content: "";
   position: absolute;
-  inset: 56px 88px 54px;
+  inset: 38px 76px 34px;
   pointer-events: none;
   background:
     linear-gradient(90deg, rgb(var(--gold-700) / 0.08), transparent 8%, transparent 92%, rgb(var(--gold-700) / 0.08)),
@@ -982,9 +982,9 @@
 
 .frame-beam {
   position: absolute;
-  left: 72px;
-  right: 72px;
-  height: 32px;
+  left: 66px;
+  right: 66px;
+  height: 28px;
   z-index: 4;
   border: 1px solid rgb(var(--gold-300) / 0.24);
   clip-path: polygon(2% 0, 98% 0, 100% 24%, 100% 76%, 98% 100%, 2% 100%, 0 76%, 0 24%);
@@ -1026,13 +1026,13 @@
     linear-gradient(180deg, #8a603b, #432919 78%);
 }
 
-.frame-beam-top { top: 10px; }
-.frame-beam-bottom { bottom: 10px; }
+.frame-beam-top { top: 8px; }
+.frame-beam-bottom { bottom: 8px; }
 
 .frame-corner {
   position: absolute;
   z-index: 5;
-  width: 78px;
+  width: 68px;
   aspect-ratio: 1;
   border: 1px solid rgb(var(--gold-300) / 0.28);
   background:
@@ -1083,9 +1083,9 @@
   position: relative;
   z-index: 3;
   display: grid;
-  grid-template-rows: 30px 1fr 32px;
+  grid-template-rows: 26px 1fr 28px;
   min-height: 100%;
-  padding-inline: 6px;
+  padding-inline: 5px;
   overflow: hidden;
 }
 
@@ -1106,7 +1106,7 @@
 
 .column-core {
   position: relative;
-  padding: 18px 12px;
+  padding: 14px 10px;
   border-inline: 1px solid rgb(var(--gold-300) / 0.22);
   overflow: hidden;
   background:
@@ -1192,14 +1192,15 @@
   justify-self: center;
   display: grid;
   grid-template-rows: auto auto auto;
-  gap: 18px;
+  gap: 12px;
+  align-content: start;
   overflow: visible;
 }
 
 .center-top-cartouche {
   display: grid;
   justify-items: center;
-  gap: 14px;
+  gap: 9px;
 }
 
 .homm2-main-menu-stage .menu-keep {
@@ -1208,7 +1209,7 @@
 
 .menu-plate-shell {
   position: relative;
-  padding: 12px;
+  padding: 8px;
 }
 
 .menu-plate-shadow {
@@ -1221,7 +1222,7 @@
 .menu-plate-body {
   position: relative;
   z-index: 2;
-  padding: clamp(22px, 3vw, 30px);
+  padding: clamp(17px, 2.2vw, 24px);
   border: 1px solid rgb(var(--gold-300) / 0.3);
   clip-path: var(--shape-hero);
   background:
@@ -1258,7 +1259,7 @@
 
 .supporting-lore-strip {
   display: grid;
-  gap: 14px;
+  gap: 8px;
 }
 
 .supporting-lore-strip::before {
@@ -1271,21 +1272,29 @@
 
 .homm2-main-menu-stage .menu-crest {
   margin: 0;
+  width: 48px;
+  height: 48px;
+  font-size: 20px;
+  box-shadow:
+    inset 0 0 0 3px rgb(var(--ink-950) / 0.42),
+    inset 0 1px 0 rgb(var(--parchment-50) / 0.14),
+    0 4px 0 rgb(var(--ink-950) / 0.18);
 }
 
 .homm2-main-menu-stage .menu-title-cartouche {
-  width: min(100%, 560px);
+  width: min(100%, 500px);
   justify-self: center;
   text-align: center;
-  padding: 14px 18px 22px;
+  padding: 8px 16px 12px;
   border-color: rgb(var(--gold-300) / 0.22);
   background:
     linear-gradient(180deg, rgb(var(--parchment-50) / 0.1), transparent 26%),
     linear-gradient(90deg, rgb(var(--gold-700) / 0.08), transparent 14%, transparent 86%, rgb(var(--gold-700) / 0.08)),
     rgb(var(--ink-950) / 0.2);
   box-shadow:
+    0 4px 0 rgb(var(--ink-950) / 0.16),
     inset 0 1px 0 rgb(var(--parchment-50) / 0.08),
-    0 10px 24px rgb(0 0 0 / 0.14);
+    inset 0 -2px 0 rgb(var(--gold-700) / 0.12);
 }
 
 .homm2-main-menu-stage .menu-title-cartouche::before,
@@ -1303,21 +1312,124 @@
 
 .homm2-main-menu-stage .menu-title-cartouche h1,
 .homm2-main-menu-stage .menu-title-cartouche .lead {
-  max-width: 28ch;
   margin-inline: auto;
+}
+
+.homm2-main-menu-stage .menu-title-cartouche h1 {
+  max-width: 24ch;
+  margin-bottom: 5px;
+  font-size: clamp(30px, 2.9vw, 36px);
+  line-height: 0.94;
+  letter-spacing: -0.035em;
+  text-shadow:
+    0 2px 0 rgb(var(--ink-950) / 0.32),
+    0 7px 0 rgb(var(--ink-950) / 0.08);
+}
+
+.homm2-main-menu-stage .menu-title-cartouche .lead {
+  max-width: 42ch;
+  margin-bottom: 0;
+  font-size: clamp(12px, 0.95vw, 14px);
+  line-height: 1.35;
+  color: rgb(var(--parchment-50) / 0.82);
+}
+
+.homm2-main-menu-stage .menu-title-cartouche .eyebrow {
+  margin-bottom: 4px;
+  padding-bottom: 3px;
+  opacity: 0.82;
+}
+
+.homm2-main-menu-stage .plaque-ribbon {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 8px;
+  width: min(100%, 300px);
+  margin: -4px auto 5px;
+  color: var(--accent-value);
+}
+
+.homm2-main-menu-stage .plaque-ribbon span {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgb(var(--gold-300) / 0.45));
+}
+
+.homm2-main-menu-stage .plaque-ribbon span:last-child {
+  background: linear-gradient(90deg, rgb(var(--gold-300) / 0.45), transparent);
+}
+
+.homm2-main-menu-stage .plaque-ribbon strong,
+.homm2-main-menu-stage .plaque-inscription {
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.homm2-main-menu-stage .plaque-ribbon strong::before,
+.homm2-main-menu-stage .plaque-ribbon strong::after {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  margin: 0 7px 1px;
+  border: 1px solid rgb(var(--gold-300) / 0.5);
+  background: rgb(var(--ink-950) / 0.36);
+  transform: rotate(45deg);
+}
+
+.homm2-main-menu-stage .plaque-inscription {
+  margin: 4px auto 0;
+  color: rgb(var(--gold-300) / 0.72);
 }
 
 .homm2-main-menu-stage .game-menu-stack {
-  width: min(100%, 420px);
-  margin-inline: auto;
-  gap: 12px;
+  width: min(100%, 388px);
+  margin: 0 auto;
+  gap: 5px;
+  padding: 8px;
+  border: 1px solid rgb(var(--gold-300) / 0.16);
+  clip-path: var(--shape-panel);
+  background:
+    linear-gradient(180deg, rgb(var(--parchment-50) / 0.055), transparent 22%),
+    repeating-linear-gradient(0deg, rgb(var(--gold-700) / 0.08) 0 1px, transparent 1px 64px),
+    rgb(var(--ink-950) / 0.24);
 }
 
 .homm2-main-menu-stage .game-menu-button {
-  min-height: 78px;
-  grid-template-columns: 54px minmax(0, 1fr);
-  padding: 13px 18px;
+  min-height: 50px;
+  grid-template-columns: 36px minmax(0, 1fr);
+  gap: 10px;
+  padding: 7px 12px;
   border-color: rgb(var(--gold-300) / 0.3);
+  box-shadow:
+    inset 0 1px 0 rgb(var(--parchment-50) / 0.13),
+    inset 0 -3px 0 rgb(var(--ink-950) / 0.36),
+    0 3px 0 rgb(var(--ink-950) / 0.18);
+}
+
+.homm2-main-menu-stage .game-menu-button.primary {
+  background:
+    linear-gradient(180deg, #f4dca4 0%, #d4a84b 22%, rgb(var(--gold-700)) 70%, #6f4b23 100%),
+    linear-gradient(90deg, rgb(var(--parchment-50) / 0.16), transparent 18%, transparent 82%, rgb(var(--gold-700) / 0.16));
+}
+
+.homm2-main-menu-stage .game-menu-button strong {
+  font-size: 12px;
+  line-height: 1.22;
+}
+
+.homm2-main-menu-stage .game-menu-button small {
+  margin-top: 1px;
+  font-size: 11px;
+  line-height: 1.24;
+}
+
+.homm2-main-menu-stage .game-menu-button.utility {
+  min-height: 46px;
 }
 
 .homm2-main-menu-stage .game-menu-button:hover {
@@ -1325,9 +1437,8 @@
   box-shadow:
     inset 0 1px 0 rgb(var(--parchment-50) / 0.16),
     inset 0 -3px 0 rgb(var(--gold-700) / 0.28),
-    0 5px 0 rgb(var(--ink-950) / 0.16),
-    0 12px 20px rgb(var(--ink-950) / 0.16),
-    0 0 24px rgb(var(--gold-300) / 0.08);
+    0 4px 0 rgb(var(--ink-950) / 0.18),
+    0 0 0 1px rgb(var(--parchment-50) / 0.08);
 }
 
 .homm2-main-menu-stage .game-menu-button:active {
@@ -1339,6 +1450,8 @@
 }
 
 .homm2-main-menu-stage .game-menu-glyph {
+  width: 32px;
+  height: 32px;
   box-shadow:
     inset 0 1px 0 rgb(var(--parchment-50) / 0.1),
     inset 0 -2px 0 rgb(var(--ink-950) / 0.22),
@@ -1352,14 +1465,35 @@
 }
 
 .homm2-main-menu-stage .menu-plaques {
-  width: min(100%, 468px);
+  width: min(100%, 640px);
   margin-inline: auto;
-  gap: 10px;
-  padding-top: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 10px;
+  padding-top: 10px;
 }
 
 .homm2-main-menu-stage .menu-plaque {
-  padding-block: 12px 13px;
+  grid-template-columns: 32px minmax(0, 1fr);
+  column-gap: 8px;
+  row-gap: 2px;
+  padding: 7px 9px 8px;
+}
+
+.homm2-main-menu-stage .plaque-index {
+  width: 32px;
+  height: 32px;
+  font-size: 12px;
+}
+
+.homm2-main-menu-stage .menu-plaque strong {
+  font-size: 11px;
+  line-height: 1.24;
+}
+
+.homm2-main-menu-stage .menu-plaque small {
+  font-size: 11px;
+  line-height: 1.24;
 }
 
 .homm2-main-menu-stage .menu-plaque:hover,
@@ -1376,6 +1510,7 @@
   margin-top: 0;
   width: min(100%, 420px);
   margin-inline: auto;
+  padding: 7px 11px 8px;
   border-color: rgb(var(--gold-300) / 0.22);
   background:
     linear-gradient(180deg, rgb(var(--parchment-50) / 0.08), transparent 38%),
@@ -1385,23 +1520,41 @@
 
 .homm2-main-menu-stage .status-rail,
 .homm2-main-menu-stage .command-rail-shell {
+  margin-top: 0;
   min-height: 100%;
   overflow-wrap: anywhere;
   background:
-    linear-gradient(180deg, rgb(var(--parchment-50) / 0.05), transparent 32%),
-    linear-gradient(180deg, rgb(var(--ink-900) / 0.52), rgb(var(--ink-950) / 0.72));
+    linear-gradient(180deg, rgb(var(--parchment-50) / 0.035), transparent 32%),
+    linear-gradient(180deg, rgb(var(--ink-900) / 0.44), rgb(var(--ink-950) / 0.66));
 }
 
 .homm2-main-menu-stage .status-rail-head,
 .homm2-main-menu-stage .command-rail-head {
-  padding-bottom: 12px;
+  padding-bottom: 8px;
   text-align: center;
+}
+
+.homm2-main-menu-stage .status-rail,
+.homm2-main-menu-stage .command-rail-shell {
+  gap: 8px;
+  padding: 13px 10px;
+}
+
+.homm2-main-menu-stage .status-box,
+.homm2-main-menu-stage .command-entry {
+  padding: 9px 8px;
 }
 
 .homm2-main-menu-stage .command-entry,
 .homm2-main-menu-stage .status-box,
 .homm2-main-menu-stage .mini-command {
-  border-color: rgb(var(--gold-300) / 0.2);
+  border-color: rgb(var(--gold-300) / 0.15);
+  background-color: rgb(var(--ink-950) / 0.2);
+}
+
+.homm2-main-menu-stage .status-box strong,
+.homm2-main-menu-stage .command-entry strong {
+  color: rgb(var(--parchment-50) / 0.76);
 }
 
 .homm2-main-menu-stage .status-rail::before,
@@ -1416,7 +1569,7 @@
   }
 
   .homm2-main-menu-stage .menu-title-cartouche {
-    width: min(100%, 600px);
+    width: min(100%, 500px);
   }
 }
 
@@ -1489,13 +1642,17 @@
   }
 
   .homm2-main-menu-stage .menu-title-cartouche {
-    width: min(100%, 520px);
-    padding: 12px 16px 18px;
+    width: min(100%, 470px);
+    padding: 10px 16px 15px;
   }
 
-  .homm2-main-menu-stage .menu-title-cartouche h1,
+  .homm2-main-menu-stage .menu-title-cartouche h1 {
+    max-width: 18ch;
+    font-size: clamp(32px, 3.8vw, 42px);
+  }
+
   .homm2-main-menu-stage .menu-title-cartouche .lead {
-    max-width: 26ch;
+    max-width: 38ch;
   }
 
   .homm2-main-menu-stage .menu-plate-shell {
@@ -1507,13 +1664,13 @@
   }
 
   .homm2-main-menu-stage .game-menu-stack {
-    width: min(100%, 390px);
-    gap: 9px;
+    width: min(100%, 372px);
+    gap: 6px;
   }
 
   .homm2-main-menu-stage .game-menu-button {
     grid-template-columns: 46px minmax(0, 1fr);
-    min-height: 68px;
+    min-height: 62px;
     padding: 11px 13px;
   }
 
@@ -1525,6 +1682,10 @@
   .homm2-main-menu-stage .menu-plaques,
   .homm2-main-menu-stage .save-slot-strip {
     width: min(100%, 410px);
+  }
+
+  .homm2-main-menu-stage .menu-plaques {
+    grid-template-columns: 1fr;
   }
 
   .homm2-main-menu-stage .menu-plaque {
@@ -1599,6 +1760,10 @@
   .side-column-right { order: 3; }
   .menu-center-mount { order: 1; }
 
+  .homm2-main-menu-stage .menu-plaques {
+    grid-template-columns: 1fr;
+  }
+
   .column-cap,
   .column-foot,
   .column-ribs,
@@ -1644,5 +1809,20 @@
 
   .homm2-main-menu-stage .menu-title-cartouche {
     width: 100%;
+    padding: 10px 14px 14px;
+  }
+
+  .homm2-main-menu-stage .menu-title-cartouche h1 {
+    max-width: 16ch;
+    font-size: clamp(31px, 10vw, 42px);
+  }
+
+  .homm2-main-menu-stage .menu-title-cartouche .lead {
+    font-size: 13px;
+  }
+
+  .homm2-main-menu-stage .plaque-inscription {
+    font-size: 9px;
+    letter-spacing: 0.12em;
   }
 }
