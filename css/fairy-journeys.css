@@ -2002,3 +2002,153 @@
     letter-spacing: 0.05em;
   }
 }
+
+/* Emergency desktop stabilization: keep the HoMM2 shell intentional instead of
+   forcing a clipped, over-tall first screen after the selective sync. */
+@media (min-width: 921px) {
+  .fairy-menu-scene {
+    min-height: auto;
+    padding-top: clamp(16px, 2vw, 24px);
+    padding-bottom: clamp(36px, 5vw, 56px);
+  }
+
+  .homm2-main-menu-stage {
+    padding: clamp(16px, 1.8vw, 22px);
+    min-height: auto;
+  }
+
+  .homm2-main-menu-stage .menu-frame-shell {
+    grid-template-columns: minmax(180px, 220px) minmax(0, 640px) minmax(180px, 220px);
+    gap: clamp(14px, 1.8vw, 22px);
+    min-height: auto;
+    padding: clamp(34px, 3vw, 40px) clamp(18px, 2.2vw, 28px) clamp(24px, 2.4vw, 30px);
+    overflow: visible;
+    contain: none;
+  }
+
+  .homm2-main-menu-stage .menu-frame-shell::after {
+    inset-inline: clamp(44px, 6vw, 72px);
+  }
+
+  .homm2-main-menu-stage .side-column,
+  .homm2-main-menu-stage .menu-center-mount {
+    min-height: auto;
+  }
+
+  .homm2-main-menu-stage .menu-center-mount {
+    max-width: 640px;
+    gap: 10px;
+  }
+
+  .homm2-main-menu-stage .center-top-cartouche {
+    gap: 7px;
+  }
+
+  .homm2-main-menu-stage .menu-crest {
+    width: 42px;
+    height: 42px;
+    font-size: 18px;
+  }
+
+  .homm2-main-menu-stage .menu-title-cartouche {
+    width: min(100%, 460px);
+    padding: 7px 14px 10px;
+  }
+
+  .homm2-main-menu-stage .menu-title-cartouche h1 {
+    max-width: 19ch;
+    font-size: clamp(28px, 2.45vw, 34px);
+    line-height: 0.98;
+  }
+
+  .homm2-main-menu-stage .menu-title-cartouche .lead {
+    max-width: 39ch;
+    font-size: clamp(12px, 0.88vw, 13px);
+    line-height: 1.32;
+  }
+
+  .homm2-main-menu-stage .plaque-inscription,
+  .homm2-main-menu-stage .plaque-ribbon strong {
+    font-size: 9px;
+  }
+
+  .homm2-main-menu-stage .menu-plate-shell {
+    padding: 6px;
+  }
+
+  .homm2-main-menu-stage .menu-plate-body {
+    padding: clamp(14px, 1.6vw, 18px);
+  }
+
+  .homm2-main-menu-stage .game-menu-stack {
+    width: min(100%, 360px);
+    gap: 5px;
+    padding: 7px;
+  }
+
+  .homm2-main-menu-stage .game-menu-button {
+    min-height: 46px;
+    grid-template-columns: 32px minmax(0, 1fr);
+    padding: 6px 10px;
+  }
+
+  .homm2-main-menu-stage .game-menu-glyph {
+    width: 30px;
+    height: 30px;
+  }
+
+  .homm2-main-menu-stage .supporting-lore-strip {
+    gap: 6px;
+  }
+
+  .homm2-main-menu-stage .menu-plaques {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 6px;
+    margin-top: 6px;
+    padding-top: 6px;
+  }
+
+  .homm2-main-menu-stage .menu-plaque {
+    grid-template-columns: 1fr;
+    padding: 6px 8px;
+    text-align: center;
+  }
+
+  .homm2-main-menu-stage .menu-plaque .plaque-index {
+    display: none;
+  }
+
+  .homm2-main-menu-stage .menu-plaque small {
+    display: none;
+  }
+
+  .homm2-main-menu-stage .save-slot-strip {
+    padding: 6px 10px;
+  }
+
+  .homm2-main-menu-stage .status-rail,
+  .homm2-main-menu-stage .command-rail-shell {
+    min-height: auto;
+    gap: 7px;
+    padding: 11px 9px;
+  }
+
+  .homm2-main-menu-stage .status-box,
+  .homm2-main-menu-stage .command-entry {
+    padding: 8px 7px;
+  }
+}
+
+@media (min-width: 921px) and (max-height: 820px) {
+  .homm2-main-menu-stage .supporting-lore-strip {
+    display: none;
+  }
+
+  .homm2-main-menu-stage .menu-frame-shell {
+    align-items: start;
+  }
+
+  .homm2-main-menu-stage .side-column {
+    align-self: stretch;
+  }
+}
