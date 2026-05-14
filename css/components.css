@@ -13,6 +13,8 @@
    ============================================================================ */
 
 * { box-sizing: border-box; }
+*::before,
+*::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
 @media (prefers-reduced-motion: reduce) {
@@ -68,6 +70,43 @@ body::after {
 button { font: inherit; }
 a { color: inherit; text-decoration: none; }
 h1, h2, h3, p { margin-top: 0; }
+
+img,
+svg,
+canvas { max-width: 100%; }
+
+body,
+.board-shell,
+.scene,
+.scene-frame,
+.desk-composition,
+.ceremony-shell,
+.site-header,
+.brand-mark,
+.hero-copy,
+.material-ledger,
+.parchment-object,
+.archive-rail,
+.archive-rail-item,
+.side-notes,
+.note-card,
+.ritual-panel,
+.hero-meta-cell,
+.dossier-ledger-strip span,
+.ritual-protocol div,
+.btn { min-width: 0; }
+
+h1,
+h2,
+h3,
+p,
+strong,
+small,
+span,
+a,
+button {
+  overflow-wrap: anywhere;
+}
 
 /* --------------------------------------------------------------------------
    Atmospheric ambient lights
@@ -308,6 +347,7 @@ h1 {
   text-shadow:
     0 3px 0 rgb(var(--ink-950) / 0.28),
     0 18px 44px rgb(0 0 0 / 0.45);
+  text-wrap: balance;
 }
 
 .lead,
@@ -325,6 +365,16 @@ h1 {
   max-width: 640px;
   font-size: var(--text-lead);
   color: rgb(var(--parchment-50) / 0.9);
+  text-wrap: pretty;
+}
+
+.lead,
+.dossier-text,
+.scene-title-block > p:not(.eyebrow),
+.ceremony-copy > p:not(.eyebrow),
+.ritual-panel > p:not(.archive-label):not(.consequence-line),
+.board-footer p {
+  margin-bottom: 0;
 }
 
 h2 {
@@ -334,6 +384,7 @@ h2 {
   line-height: var(--leading-h2);
   letter-spacing: var(--tracking-h2);
   margin-bottom: 20px;
+  text-wrap: balance;
 }
 
 h3 {
@@ -343,6 +394,7 @@ h3 {
   line-height: var(--leading-h3);
   margin-bottom: var(--space-4);
   letter-spacing: var(--tracking-h3);
+  text-wrap: balance;
 }
 
 /* Illuminated capital — gold first letter on h2/h3 */

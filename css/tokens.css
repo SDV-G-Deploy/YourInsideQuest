@@ -70,11 +70,11 @@
   /* Type — fluid by default */
   --text-eyebrow: 12px;
   --text-caption: 13px;
-  --text-body:    clamp(17px, 1.75vw, 22px);
-  --text-lead:    clamp(18px, 1.9vw,  24px);
-  --text-h3:      clamp(24px, 2.7vw,  38px);
-  --text-h2:      clamp(38px, 5.7vw,  72px);
-  --text-display: clamp(52px, 8.2vw, 112px);
+  --text-body:    clamp(17px, 1.45vw, 21px);
+  --text-lead:    clamp(18px, 1.65vw, 23px);
+  --text-h3:      clamp(24px, 2.35vw, 36px);
+  --text-h2:      clamp(32px, 4.4vw, 60px);
+  --text-display: clamp(44px, 6.4vw, 92px);
 
   /* Tracking */
   --tracking-display: -0.048em;

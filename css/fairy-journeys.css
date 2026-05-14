@@ -1826,3 +1826,179 @@
     letter-spacing: 0.12em;
   }
 }
+
+/* Selective upstream reconciliation: compact copy/mobile safety pass */
+.homm2-main-menu-stage {
+  min-height: auto;
+}
+
+.homm2-main-menu-stage .menu-frame-shell {
+  min-height: clamp(600px, 60vw, 660px);
+}
+
+.homm2-main-menu-stage .menu-title-cartouche h1 {
+  max-width: 18ch;
+}
+
+.homm2-main-menu-stage .game-menu-button small,
+.homm2-main-menu-stage .menu-plaque small,
+.homm2-main-menu-stage .status-box strong,
+.homm2-main-menu-stage .command-entry strong {
+  overflow-wrap: normal;
+}
+
+@media (max-width: 920px) {
+  .homm2-main-menu-stage .command-entry,
+  .homm2-main-menu-stage .rail-button {
+    display: none;
+  }
+
+  .homm2-main-menu-stage .command-rail-shell {
+    align-self: start;
+    gap: 8px;
+  }
+
+  .homm2-main-menu-stage .backdrop-vines,
+  .homm2-main-menu-stage .backdrop-ruins {
+    opacity: 0.3;
+  }
+}
+
+@media (max-width: 560px) {
+  .fairy-board,
+  .fairy-menu-scene,
+  .homm2-main-menu-stage {
+    width: 100%;
+    max-width: calc(100vw - 20px);
+  }
+
+  .homm2-main-menu-stage {
+    padding: 16px;
+    border-radius: 22px;
+  }
+
+  .homm2-main-menu-stage .menu-frame-shell {
+    padding-top: 42px;
+    gap: 14px;
+  }
+
+  .homm2-main-menu-stage .menu-title-cartouche h1 {
+    max-width: 11ch;
+    font-size: clamp(32px, 10.2vw, 42px);
+    line-height: 1;
+  }
+
+  .homm2-main-menu-stage .menu-title-cartouche .lead {
+    font-size: 15px;
+    line-height: 1.52;
+  }
+
+  .homm2-main-menu-stage .game-menu-stack {
+    gap: 8px;
+  }
+
+  .homm2-main-menu-stage .game-menu-button {
+    width: 100%;
+    max-width: 100%;
+    grid-template-columns: 36px minmax(0, 1fr);
+    gap: 9px;
+    min-height: 58px;
+    padding: 10px;
+  }
+
+  .homm2-main-menu-stage .game-menu-button.primary {
+    grid-template-columns: 40px minmax(0, 1fr);
+    min-height: 68px;
+    padding: 11px;
+  }
+
+  .homm2-main-menu-stage .game-menu-glyph {
+    width: 38px;
+    height: 38px;
+    font-size: 13px;
+  }
+
+  .homm2-main-menu-stage .game-menu-button strong {
+    font-size: 12px;
+  }
+
+  .homm2-main-menu-stage .game-menu-button.primary strong {
+    font-size: 13px;
+  }
+
+  .homm2-main-menu-stage .game-menu-button small {
+    max-width: 100%;
+    font-size: 11px;
+    line-height: 1.36;
+    white-space: normal;
+    overflow-wrap: normal;
+  }
+
+  .homm2-main-menu-stage .save-slot-strip strong {
+    font-size: 11px;
+  }
+
+  .homm2-main-menu-stage .menu-plaques {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 7px;
+  }
+
+  .homm2-main-menu-stage .menu-plaque {
+    grid-template-columns: 28px minmax(0, 1fr);
+    column-gap: 8px;
+    padding: 9px;
+  }
+
+  .homm2-main-menu-stage .plaque-index {
+    grid-row: 1 / span 2;
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+
+  .homm2-main-menu-stage .menu-plaque strong {
+    font-size: 10px;
+    line-height: 1.28;
+  }
+
+  .homm2-main-menu-stage .menu-plaque small {
+    display: none;
+  }
+
+  .homm2-main-menu-stage .status-rail {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 7px;
+  }
+
+  .homm2-main-menu-stage .status-rail-head {
+    grid-column: 1 / -1;
+    padding-bottom: 7px;
+  }
+
+  .homm2-main-menu-stage .status-box {
+    padding: 9px 8px;
+  }
+
+  .homm2-main-menu-stage .status-label {
+    margin-bottom: 4px;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+  }
+
+  .homm2-main-menu-stage .status-box strong {
+    font-size: 10px;
+    line-height: 1.32;
+    letter-spacing: 0.035em;
+  }
+
+  .homm2-main-menu-stage .mini-command-grid {
+    gap: 6px;
+  }
+
+  .homm2-main-menu-stage .mini-command {
+    min-height: 40px;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+  }
+}
