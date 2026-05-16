@@ -493,3 +493,15 @@ Applied from the newer sandbox state without replacing the YourInsideQuest frame
 Intentional non-sync:
 - did not revert the applied HoMM2 frame shell to the simpler sandbox three-column layout;
 - did not wholesale copy sandbox HTML/CSS, because the live product currently owns the heavier main-menu art direction.
+
+## 12. Visual reconciliation pass — proof-boundary strip
+
+Applied after comparing YIQ against the updated Fairy/reference surfaces:
+- wrote the durable reconciliation artifact at `docs/yiq-visual-reconciliation-2026-05-16.md`;
+- kept the heavier YIQ Heraldic/Menu shell as an intentional product deviation;
+- added a compact first-viewport boundary strip to root and `fairy-journeys.html`: YIQ is an applied product smoke scene, while canonical recipe proof stays in the reference sandbox.
+
+Verification:
+- local CDP smoke at `390 / 768 / 1440` for YIQ root, YIQ fairy, Fairy applied, and Reference;
+- no page-level horizontal overflow in those local checks;
+- YIQ root/fairy both expose the new applied-boundary copy.

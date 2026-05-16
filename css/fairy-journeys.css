@@ -1391,6 +1391,25 @@
   color: rgb(var(--gold-300) / 0.72);
 }
 
+.homm2-main-menu-stage .applied-boundary-strip {
+  width: min(100%, 390px);
+  margin: 7px auto 0;
+  padding: 5px 8px;
+  border: 1px solid rgb(var(--mana-400) / 0.18);
+  clip-path: var(--shape-interactive);
+  background:
+    linear-gradient(90deg, rgb(var(--mana-400) / 0.11), transparent 22%, transparent 78%, rgb(var(--gold-300) / 0.08)),
+    rgb(var(--ink-950) / 0.18);
+  color: rgb(var(--parchment-50) / 0.72);
+  font-family: var(--font-display);
+  font-size: var(--fairy-menu-label-floor);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+  text-transform: uppercase;
+}
+
 .homm2-main-menu-stage .game-menu-stack {
   width: min(100%, 388px);
   margin: 0 auto;
@@ -2204,6 +2223,13 @@
 
   .homm2-main-menu-stage .plaque-inscription {
     display: none;
+  }
+
+  .homm2-main-menu-stage .applied-boundary-strip {
+    margin-top: 6px;
+    padding: 4px 7px;
+    font-size: 10px;
+    letter-spacing: 0.05em;
   }
 
   .homm2-main-menu-stage .menu-plate-shell {
