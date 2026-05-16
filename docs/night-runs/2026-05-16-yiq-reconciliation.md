@@ -63,7 +63,7 @@ Run a bounded YourInsideQuest reconciliation and cross-project QA sequence again
 | 01 | 2026-05-16T19:39:00Z | completed | `2b91b3b` | `docs/night-runs/2026-05-16-yiq-reconciliation-pass-01.md` | clean git state; YIQ live 200/parity; root widths 1440/1180/1024/920/768/390/360 no page overflow | stop after ledger/doc sync for this single bounded wake |
 | 02 | 2026-05-16T20:04:00Z | completed | `47a870d` | `docs/night-runs/2026-05-16-yiq-reconciliation-pass-02.md` | clean git state; required docs reread; live compare across YIQ/Fairy/reference at `1440x900`, `768x1024`, `390x844`; no code fixes applied | if another wake is authorized, prefer one narrow drift only |
 | 03 | 2026-05-16T20:29:00Z | completed | `91cb02c` | `docs/night-runs/2026-05-16-yiq-reconciliation-pass-03.md` | `Mirror` -> `Витрина` on YIQ root; `git diff --check`; source grep; local `curl` verification against `127.0.0.1:4174/index.html`; no layout changes | pass 04 should confirm live/deploy parity after push |
-| 04 | 2026-05-16T20:54:00Z | completed | pending | `docs/night-runs/2026-05-16-yiq-reconciliation-pass-04.md` | four live surfaces checked at `1440x900`, `768x1024`, `390x844`; no page-level overflow; YIQ live `Витрина` parity confirmed | closeout wake can summarize |
+| 04 | 2026-05-16T20:54:00Z | completed | `89a8121` | `docs/night-runs/2026-05-16-yiq-reconciliation-pass-04.md` | four live surfaces checked at `1440x900`, `768x1024`, `390x844`; no page-level overflow; YIQ live `Витрина` parity confirmed | closeout wake can summarize |
 | 05 | 2026-05-16T21:19:00Z | planned | - | closeout summary | commits, deploy/live status, residual risk | send concise Russian report |
 
 ## Runs
@@ -146,7 +146,7 @@ Run a bounded YourInsideQuest reconciliation and cross-project QA sequence again
   - this ledger
 
 ## Closeout
-- Commits: `2b91b3b` (`Document YIQ pass-01 live parity baseline`), `47a870d` (`Add YIQ pass-02 reconciliation report`), `91cb02c` (`Normalize YIQ mirrored self-link label`)
+- Commits: `2b91b3b` (`Document YIQ pass-01 live parity baseline`), `47a870d` (`Add YIQ pass-02 reconciliation report`), `91cb02c` (`Normalize YIQ mirrored self-link label`), `89a8121` (`Record YIQ pass-04 cross-project QA`)
 - Verification/deploy: YIQ live parity was confirmed in pass 01. Pass 02 added a findings-only report after live compare across YIQ/Fairy/reference at `1440x900`, `768x1024`, and `390x844`. Pass 03 locally verified the root label normalization (`Mirror` -> `Витрина`). Pass 04 then confirmed deployed live parity for that label and re-checked all four live surfaces at desktop/tablet/mobile with no page-level overflow.
 - Closeout report sent: pending this pass closeout in chat
 - Residual risks: copy drift is now closed, but YIQ small-desktop/tablet first-screen proportions still stretch earlier than the updated Fairy/reference surfaces; roadmap chronology still mixes historical and current state.
