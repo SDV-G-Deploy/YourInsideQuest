@@ -62,7 +62,7 @@ Run a bounded YourInsideQuest reconciliation and cross-project QA sequence again
 | --- | --- | --- | --- | --- | --- | --- |
 | 01 | 2026-05-16T19:39:00Z | completed | `2b91b3b` | `docs/night-runs/2026-05-16-yiq-reconciliation-pass-01.md` | clean git state; YIQ live 200/parity; root widths 1440/1180/1024/920/768/390/360 no page overflow | stop after ledger/doc sync for this single bounded wake |
 | 02 | 2026-05-16T20:04:00Z | completed | `47a870d` | `docs/night-runs/2026-05-16-yiq-reconciliation-pass-02.md` | clean git state; required docs reread; live compare across YIQ/Fairy/reference at `1440x900`, `768x1024`, `390x844`; no code fixes applied | if another wake is authorized, prefer one narrow drift only |
-| 03 | 2026-05-16T20:29:00Z | planned | - | one bounded YIQ fix pass or no-op rationale | targeted local/browser gate | no broad redesign, no architecture rewrite |
+| 03 | 2026-05-16T20:29:00Z | completed | pending | `docs/night-runs/2026-05-16-yiq-reconciliation-pass-03.md` | `Mirror` -> `Витрина` on YIQ root; `git diff --check`; source grep; local `curl` verification against `127.0.0.1:4174/index.html`; no layout changes | pass 04 should confirm live/deploy parity after push |
 | 04 | 2026-05-16T20:54:00Z | planned | - | cross-project QA | four live surfaces at desktop/tablet/mobile | update only stale docs if needed |
 | 05 | 2026-05-16T21:19:00Z | planned | - | closeout summary | commits, deploy/live status, residual risk | send concise Russian report |
 
@@ -109,9 +109,27 @@ Run a bounded YourInsideQuest reconciliation and cross-project QA sequence again
 - no implementation:
   - this pass explicitly stopped at reporting and classification
 
+### Pass 03 — 2026-05-16 20:29 UTC
+
+- status: completed
+- scope: one bounded fix only
+- chosen fix: normalize YIQ root self-link label from `Mirror` to `Витрина` to match `fairy-journeys.html`
+- changed files:
+  - `index.html`
+  - `docs/yiq-visual-reconciliation-2026-05-16.md`
+  - `docs/night-runs/2026-05-16-yiq-reconciliation-pass-03.md`
+- verification:
+  - `git diff --check` clean
+  - source grep showed `Витрина` in both root occurrences and no remaining `Mirror` in `index.html` / `fairy-journeys.html`
+  - local `curl` against `http://127.0.0.1:4174/index.html` returned `Витрина` in both root occurrences
+  - host browser policy blocked local `127.0.0.1` navigation, so browser-based local confirmation was not available in this wake
+  - deployed live root still showed the old label before push/deploy refresh, so live parity remains for next pass to confirm
+- durable artifact:
+  - `docs/night-runs/2026-05-16-yiq-reconciliation-pass-03.md`
+
 ## Closeout
 - Commits: `2b91b3b` (`Document YIQ pass-01 live parity baseline`), `47a870d` (`Add YIQ pass-02 reconciliation report`)
-- Verification/deploy: YIQ live parity confirmed against current `HEAD` lineage; required root viewport matrix clean for page overflow; docs synced to shipped/live boundary-strip reality. Pass 02 added a findings-only report after live compare across YIQ/Fairy/reference at `1440x900`, `768x1024`, and `390x844`.
+- Verification/deploy: YIQ live parity was confirmed in pass 01. Pass 02 added a findings-only report after live compare across YIQ/Fairy/reference at `1440x900`, `768x1024`, and `390x844`. Pass 03 locally verified the root label normalization (`Mirror` -> `Витрина`) via grep and local `curl`, but does not yet claim deployed live parity for that label change inside this wake.
 - Closeout report sent: pending this pass closeout in chat
-- Residual risks: low-value copy drift remains (`Mirror` vs `Витрина`); YIQ small-desktop/tablet first-screen proportions still stretch earlier than the updated Fairy/reference surfaces; roadmap chronology still mixes historical and current state.
-- Best next step: if another bounded pass is authorized later, either normalize the YIQ self-link label or do one selective proportion pass around the `920px` collapse boundary before any broader redesign.
+- Residual risks: pass 03 resolved the narrow self-link copy drift locally, but deployed live parity for that label still needs confirmation after Pages refresh; YIQ small-desktop/tablet first-screen proportions still stretch earlier than the updated Fairy/reference surfaces; roadmap chronology still mixes historical and current state.
+- Best next step: if another bounded pass is authorized later, first confirm deployed live parity for the `Витрина` label and then decide whether to spend the next fix wake on the `920px` proportion boundary or the stale roadmap chronology.

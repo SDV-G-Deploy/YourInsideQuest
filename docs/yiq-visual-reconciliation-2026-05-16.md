@@ -5,7 +5,7 @@
 | Severity | Page | Viewport | Issue | Why it matters | Bounded fix idea |
 | --- | --- | --- | --- | --- | --- |
 | Resolved | YIQ root + `fairy-journeys.html` | desktop / tablet / mobile | The applied/proof boundary is now present in the first viewport as `Applied smoke · канон в reference.` on both live YIQ surfaces. | This closes the earlier medium-risk ambiguity about treating YIQ as canonical system proof. | Keep the strip; only revisit if the product shell changes materially. |
-| Low | YIQ root | desktop / tablet / mobile | Nav uses `Mirror` while `fairy-journeys.html` uses `Витрина` for the same self-link. | Minor product-copy inconsistency between the two live YIQ surfaces. It does not break layout or the visual system. | Normalize later if the root/fairy split remains; not worth spending this pass on it. |
+| Resolved | YIQ root | desktop / tablet / mobile | The self-link label now matches both YIQ live surfaces as `Витрина`. | This removes a small but persistent semantic mismatch inside the mirrored applied shell. | Keep unless product naming changes again. |
 | Low | YIQ root + `fairy-journeys.html` | tablet | First screen is stable but tall: the stage runs to about 1524px on 768px tablet. | This is an intentional game-screen stack, but it makes tablet rhythm denser than Fairy/reference. | Keep as intentional for now; tune in a later proportion pass only if visual judgment says tablet feels too slow. |
 | Watch | Fairy applied live | mobile | Shell nav has internal horizontal scroll for the final nav item; page-level overflow remains zero. | This is acceptable per current mobile utility direction, but it is a useful reference point when comparing nav behavior. | No YIQ change. YIQ nav has no page overflow and no nav overflow at 390px. |
 
@@ -18,7 +18,7 @@
 
 ## Real drift
 
-- Minor nav label mismatch (`Mirror` vs `Витрина`) is real copy drift, but low value for this pass.
+No high-confidence copy drift remains in the current YIQ shell after the self-link normalization pass. The remaining pressure is mainly proportional/layout tuning around the `920px` collapse boundary.
 
 ## Evidence summary
 
