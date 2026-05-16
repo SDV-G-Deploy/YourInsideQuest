@@ -181,6 +181,20 @@ Run a bounded YourInsideQuest reconciliation and cross-project QA sequence again
 - Best next step: if a later bounded pass is authorized, spend it either on the `920px` proportion boundary or on roadmap chronology cleanup, not on more shell-copy sync.
 - Closeout report sent: yes, in pass 05 chat closeout.
 
+## Follow-up Micro-pass — 920px boundary
+
+- status: completed after user authorization
+- scope: proportion polish only; no broad redesign and no proof/canonical role changes
+- artifact: `docs/night-runs/2026-05-16-yiq-920-boundary-micro-pass.md`
+- changed file: `css/fairy-journeys.css`
+- change: added a `561px-920px` tablet compact fold so the stacked shell no longer reads like a long inventory column at the `920px` boundary
+- local verification:
+  - `920`: no horizontal overflow; frame height reduced from about `1450px` live baseline to `963px` local compact fold
+  - `768`: no horizontal overflow; frame height `1033px`
+  - `390`: no horizontal overflow; mobile compact fold remains separate
+  - `921` and `1024`: no horizontal overflow; desktop fold remains active
+- next: verify deployed live root and YIQ fairy after push
+
 ### Pass 05 — 2026-05-16 21:19 UTC
 
 - status: completed

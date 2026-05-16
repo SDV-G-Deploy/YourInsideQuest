@@ -1888,6 +1888,149 @@
   }
 }
 
+/* Micro-pass: smooth the 920px boundary. The layout is intentionally stacked
+   below desktop, but tablet/small-desktop should still read as a compact menu
+   instead of a long inventory column. */
+@media (min-width: 561px) and (max-width: 920px) {
+  .homm2-main-menu-stage {
+    padding: 18px;
+  }
+
+  .homm2-main-menu-stage .menu-frame-shell {
+    gap: 14px;
+    padding-top: 40px;
+  }
+
+  .homm2-main-menu-stage .menu-center-mount {
+    max-width: 680px;
+    gap: 10px;
+  }
+
+  .homm2-main-menu-stage .center-top-cartouche {
+    gap: 7px;
+  }
+
+  .homm2-main-menu-stage .menu-crest {
+    width: 42px;
+    height: 42px;
+    font-size: 18px;
+  }
+
+  .homm2-main-menu-stage .menu-title-cartouche {
+    width: min(100%, 480px);
+    padding: 8px 14px 11px;
+  }
+
+  .homm2-main-menu-stage .menu-title-cartouche h1 {
+    max-width: 15ch;
+    margin-bottom: 5px;
+    font-size: clamp(30px, 5vw, 38px);
+    line-height: 1;
+  }
+
+  .homm2-main-menu-stage .menu-title-cartouche .lead {
+    font-size: 13px;
+    line-height: 1.34;
+  }
+
+  .homm2-main-menu-stage .plaque-ribbon {
+    margin-bottom: 3px;
+  }
+
+  .homm2-main-menu-stage .applied-boundary-strip {
+    margin-top: 6px;
+    padding-block: 4px;
+  }
+
+  .homm2-main-menu-stage .menu-plate-shell {
+    padding: 5px;
+  }
+
+  .homm2-main-menu-stage .menu-plate-body {
+    padding: 14px;
+  }
+
+  .homm2-main-menu-stage .game-menu-stack {
+    width: min(100%, 372px);
+    gap: 6px;
+    padding: 7px;
+  }
+
+  .homm2-main-menu-stage .game-menu-button {
+    grid-template-columns: 34px minmax(0, 1fr);
+    min-height: 54px;
+    padding: 8px 11px;
+  }
+
+  .homm2-main-menu-stage .game-menu-button.utility {
+    min-height: 50px;
+  }
+
+  .homm2-main-menu-stage .game-menu-glyph {
+    width: 34px;
+    height: 34px;
+  }
+
+  .homm2-main-menu-stage .menu-plaques {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 7px;
+    width: min(100%, 640px);
+    margin-top: 8px;
+    padding-top: 8px;
+  }
+
+  .homm2-main-menu-stage .menu-plaque {
+    grid-template-columns: 30px minmax(0, 1fr);
+    column-gap: 8px;
+    padding: 8px 9px;
+  }
+
+  .homm2-main-menu-stage .plaque-index {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+  }
+
+  .homm2-main-menu-stage .menu-plaque small {
+    display: none;
+  }
+
+  .homm2-main-menu-stage .status-rail {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 7px;
+    padding: 10px 9px;
+  }
+
+  .homm2-main-menu-stage .status-rail-head {
+    grid-column: 1 / -1;
+    padding-bottom: 7px;
+  }
+
+  .homm2-main-menu-stage .status-box {
+    padding: 8px;
+  }
+
+  .homm2-main-menu-stage .side-column-right {
+    display: none;
+  }
+}
+
+@media (min-width: 840px) and (max-width: 920px) {
+  .homm2-main-menu-stage .menu-plaques {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .homm2-main-menu-stage .menu-plaque {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .homm2-main-menu-stage .plaque-index {
+    display: none;
+  }
+}
+
 @media (max-width: 560px) {
   .fairy-board,
   .fairy-menu-scene,
