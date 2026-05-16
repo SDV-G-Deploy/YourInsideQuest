@@ -63,7 +63,7 @@ Run a bounded YourInsideQuest reconciliation and cross-project QA sequence again
 | 01 | 2026-05-16T19:39:00Z | completed | `2b91b3b` | `docs/night-runs/2026-05-16-yiq-reconciliation-pass-01.md` | clean git state; YIQ live 200/parity; root widths 1440/1180/1024/920/768/390/360 no page overflow | stop after ledger/doc sync for this single bounded wake |
 | 02 | 2026-05-16T20:04:00Z | completed | `47a870d` | `docs/night-runs/2026-05-16-yiq-reconciliation-pass-02.md` | clean git state; required docs reread; live compare across YIQ/Fairy/reference at `1440x900`, `768x1024`, `390x844`; no code fixes applied | if another wake is authorized, prefer one narrow drift only |
 | 03 | 2026-05-16T20:29:00Z | completed | `91cb02c` | `docs/night-runs/2026-05-16-yiq-reconciliation-pass-03.md` | `Mirror` -> `Витрина` on YIQ root; `git diff --check`; source grep; local `curl` verification against `127.0.0.1:4174/index.html`; no layout changes | pass 04 should confirm live/deploy parity after push |
-| 04 | 2026-05-16T20:54:00Z | planned | - | cross-project QA | four live surfaces at desktop/tablet/mobile | update only stale docs if needed |
+| 04 | 2026-05-16T20:54:00Z | completed | pending | `docs/night-runs/2026-05-16-yiq-reconciliation-pass-04.md` | four live surfaces checked at `1440x900`, `768x1024`, `390x844`; no page-level overflow; YIQ live `Витрина` parity confirmed | closeout wake can summarize |
 | 05 | 2026-05-16T21:19:00Z | planned | - | closeout summary | commits, deploy/live status, residual risk | send concise Russian report |
 
 ## Runs
@@ -127,9 +127,27 @@ Run a bounded YourInsideQuest reconciliation and cross-project QA sequence again
 - durable artifact:
   - `docs/night-runs/2026-05-16-yiq-reconciliation-pass-03.md`
 
+### Pass 04 — 2026-05-16 20:54 UTC
+
+- status: completed
+- scope: cross-project live QA only; no redesign changes
+- evidence used:
+  - live browser checks on YIQ root, YIQ fairy, sandbox Fairy, and reference
+  - viewports `1440x900`, `768x1024`, and `390x844`
+- result:
+  - no page-level horizontal overflow found on any checked surface
+  - controls remained readable across desktop/tablet/mobile
+  - YIQ root and YIQ fairy preserved Heraldic Menu identity
+  - YIQ live root now serves `Витрина`, so pass-03 live parity is confirmed
+  - reference stayed semantically distinct as the manual/proof surface
+- changed files:
+  - `docs/night-runs/2026-05-16-yiq-reconciliation-pass-04.md`
+  - `docs/night-runs/2026-05-16-yiq-reconciliation-pass-03.md`
+  - this ledger
+
 ## Closeout
 - Commits: `2b91b3b` (`Document YIQ pass-01 live parity baseline`), `47a870d` (`Add YIQ pass-02 reconciliation report`), `91cb02c` (`Normalize YIQ mirrored self-link label`)
-- Verification/deploy: YIQ live parity was confirmed in pass 01. Pass 02 added a findings-only report after live compare across YIQ/Fairy/reference at `1440x900`, `768x1024`, and `390x844`. Pass 03 locally verified the root label normalization (`Mirror` -> `Витрина`) via grep and local `curl`, but does not yet claim deployed live parity for that label change inside this wake.
+- Verification/deploy: YIQ live parity was confirmed in pass 01. Pass 02 added a findings-only report after live compare across YIQ/Fairy/reference at `1440x900`, `768x1024`, and `390x844`. Pass 03 locally verified the root label normalization (`Mirror` -> `Витрина`). Pass 04 then confirmed deployed live parity for that label and re-checked all four live surfaces at desktop/tablet/mobile with no page-level overflow.
 - Closeout report sent: pending this pass closeout in chat
-- Residual risks: pass 03 resolved the narrow self-link copy drift locally, but deployed live parity for that label still needs confirmation after Pages refresh; YIQ small-desktop/tablet first-screen proportions still stretch earlier than the updated Fairy/reference surfaces; roadmap chronology still mixes historical and current state.
-- Best next step: if another bounded pass is authorized later, first confirm deployed live parity for the `Витрина` label and then decide whether to spend the next fix wake on the `920px` proportion boundary or the stale roadmap chronology.
+- Residual risks: copy drift is now closed, but YIQ small-desktop/tablet first-screen proportions still stretch earlier than the updated Fairy/reference surfaces; roadmap chronology still mixes historical and current state.
+- Best next step: if another bounded pass is authorized later, spend it either on the `920px` proportion boundary or on cleaning the stale roadmap chronology, not on more shell-copy sync.

@@ -21,7 +21,7 @@
 - YIQ `fairy-journeys.html` left unchanged because it already used `Витрина` consistently.
 - No layout or architecture changes were made.
 - Verification achieved locally through source grep and local `curl` against `http://127.0.0.1:4174/index.html`.
-- Live YIQ still showed the old `Mirror` label during this wake before push/deploy refresh, so this pass does not claim live parity yet.
+- Pass 04 later confirmed deployed live parity: YIQ root now serves `Витрина` on the live site as well.
 
 ## Current assessment
 
