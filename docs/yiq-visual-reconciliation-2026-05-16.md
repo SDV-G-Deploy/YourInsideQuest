@@ -4,7 +4,7 @@
 
 | Severity | Page | Viewport | Issue | Why it matters | Bounded fix idea |
 | --- | --- | --- | --- | --- | --- |
-| Medium | YIQ root + `fairy-journeys.html` | desktop / tablet / mobile | The page carries product/menu copy but no explicit proof-boundary language. Fairy/reference now mark applied vs proof/support roles more clearly. | Future passes can mistake the YIQ live page for the canonical design-system proof instead of an applied product smoke surface. That risks copying product-specific shell choices back into the sandbox or treating sandbox recipe copy as mandatory product copy. | Add one compact applied-boundary strip in the first viewport: applied smoke here, canon stays in the reference sandbox. |
+| Resolved | YIQ root + `fairy-journeys.html` | desktop / tablet / mobile | The applied/proof boundary is now present in the first viewport as `Applied smoke · канон в reference.` on both live YIQ surfaces. | This closes the earlier medium-risk ambiguity about treating YIQ as canonical system proof. | Keep the strip; only revisit if the product shell changes materially. |
 | Low | YIQ root | desktop / tablet / mobile | Nav uses `Mirror` while `fairy-journeys.html` uses `Витрина` for the same self-link. | Minor product-copy inconsistency between the two live YIQ surfaces. It does not break layout or the visual system. | Normalize later if the root/fairy split remains; not worth spending this pass on it. |
 | Low | YIQ root + `fairy-journeys.html` | tablet | First screen is stable but tall: the stage runs to about 1524px on 768px tablet. | This is an intentional game-screen stack, but it makes tablet rhythm denser than Fairy/reference. | Keep as intentional for now; tune in a later proportion pass only if visual judgment says tablet feels too slow. |
 | Watch | Fairy applied live | mobile | Shell nav has internal horizontal scroll for the final nav item; page-level overflow remains zero. | This is acceptable per current mobile utility direction, but it is a useful reference point when comparing nav behavior. | No YIQ change. YIQ nav has no page overflow and no nav overflow at 390px. |
@@ -18,7 +18,6 @@
 
 ## Real drift
 
-- Missing applied/proof boundary on YIQ is real drift. The reference and updated Fairy page communicate applied state/support roles; YIQ currently reads as a polished product screen without stating that canonical recipe proof remains upstream.
 - Minor nav label mismatch (`Mirror` vs `Витрина`) is real copy drift, but low value for this pass.
 
 ## Evidence summary
@@ -34,14 +33,16 @@ Viewport smoke:
 
 | Surface | 390 x 844 | 768 x 1024 | 1440 x 900 |
 | --- | --- | --- | --- |
-| YIQ root | no page overflow; Heraldic/Menu identity present; proof-boundary absent | no page overflow; stage tall but stable | no page overflow; center menu reads clearly |
-| YIQ fairy | no page overflow; Heraldic/Menu identity present; proof-boundary absent | no page overflow; stage tall but stable | no page overflow; center menu reads clearly |
+| YIQ root | no page overflow; Heraldic/Menu identity present; proof-boundary present | no page overflow; stage tall but stable | no page overflow; center menu reads clearly |
+| YIQ fairy | no page overflow; Heraldic/Menu identity present; proof-boundary present | no page overflow; stage tall but stable | no page overflow; center menu reads clearly |
 | Fairy applied | no page overflow; proof-boundary present; nav scrolls internally | no page overflow | no page overflow |
 | Reference | no page overflow; proof-boundary present | no page overflow | no page overflow |
 
 ## Chosen bounded fix
 
-Apply one high-value fix: add compact proof-boundary wording to the YIQ first viewport and style it as a small contract strip inside the existing title cartouche.
+Status: shipped and live on both YIQ surfaces.
+
+The bounded fix for this reconciliation note was to add compact proof-boundary wording to the YIQ first viewport and style it as a small contract strip inside the existing title cartouche.
 
 Applied copy: `Applied smoke · канон в reference.`
 

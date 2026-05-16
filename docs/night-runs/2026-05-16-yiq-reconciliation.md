@@ -60,7 +60,7 @@ Run a bounded YourInsideQuest reconciliation and cross-project QA sequence again
 
 | Pass | Scheduled UTC | Status | Commit | Artifact | Verification | Next |
 | --- | --- | --- | --- | --- | --- | --- |
-| 01 | 2026-05-16T19:39:00Z | planned | - | live parity + viewport baseline | YIQ live HEAD/content, widths 1440/1180/1024/920/768/390/360 | stop if dirty/deploy mismatch |
+| 01 | 2026-05-16T19:39:00Z | completed | pending | `docs/night-runs/2026-05-16-yiq-reconciliation-pass-01.md` | clean git state; YIQ live 200/parity; root widths 1440/1180/1024/920/768/390/360 no page overflow | stop after ledger/doc sync for this single bounded wake |
 | 02 | 2026-05-16T20:04:00Z | planned | - | YIQ visual/design-system reconciliation report | findings-first report, intentional deviations vs real drift | choose one bounded fix only if evidence is clear |
 | 03 | 2026-05-16T20:29:00Z | planned | - | one bounded YIQ fix pass or no-op rationale | targeted local/browser gate | no broad redesign, no architecture rewrite |
 | 04 | 2026-05-16T20:54:00Z | planned | - | cross-project QA | four live surfaces at desktop/tablet/mobile | update only stale docs if needed |
@@ -68,11 +68,32 @@ Run a bounded YourInsideQuest reconciliation and cross-project QA sequence again
 
 ## Runs
 
-No pass has run yet.
+### Pass 01 — 2026-05-16 19:39 UTC
+
+- status: completed
+- observed YIQ HEAD: `52a5ded` (`Align YIQ night run pass ladder`)
+- observed sandbox HEAD: `9c57cb6` (`Mark visual alignment closeout report sent`)
+- ancestry: current YIQ HEAD confirmed as a descendant of both `b45521e` and `ec3471b`
+- live parity:
+  - `YourInsideQuest/` and `YourInsideQuest/fairy-journeys.html` returned `HTTP 200`
+  - both YIQ live surfaces expose `Applied smoke · канон в reference.`
+  - deploy mismatch not detected
+- viewport baseline:
+  - YIQ root checked at `1440/1180/1024/920/768/390/360`
+  - no page-level horizontal overflow at any required width
+  - responsive collapse becomes tall between `1024` and `920`, but remains intentional/stable rather than broken
+- semantic read:
+  - YIQ stays aligned as the applied product shell
+  - sandbox `fairy-journeys.html` intentionally differs as the recipe-stack applied smoke surface
+  - sandbox `reference.html` remains proof/manual, not product
+- stale claim fixed:
+  - `docs/yiq-visual-reconciliation-2026-05-16.md` now reflects that the applied/proof boundary strip is already shipped/live
+- durable artifact:
+  - `docs/night-runs/2026-05-16-yiq-reconciliation-pass-01.md`
 
 ## Closeout
 - Commits:
-- Verification/deploy:
-- Closeout report sent:
-- Residual risks:
-- Best next step:
+- Verification/deploy: YIQ live parity confirmed against current `HEAD` lineage; required root viewport matrix clean for page overflow; docs synced to shipped/live boundary-strip reality.
+- Closeout report sent: pending this pass closeout in chat
+- Residual risks: low-value copy drift remains (`Mirror` vs `Витрина`); tablet/root stack is intentionally tall after `920px` collapse and may merit later human visual judgment, not automatic redesign.
+- Best next step: if another bounded pass is authorized later, either normalize the YIQ self-link label or do a human-led proportion review around the `920px` collapse boundary.
