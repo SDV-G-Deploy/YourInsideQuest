@@ -60,7 +60,7 @@ Run a bounded YourInsideQuest reconciliation and cross-project QA sequence again
 
 | Pass | Scheduled UTC | Status | Commit | Artifact | Verification | Next |
 | --- | --- | --- | --- | --- | --- | --- |
-| 01 | 2026-05-16T19:39:00Z | completed | pending | `docs/night-runs/2026-05-16-yiq-reconciliation-pass-01.md` | clean git state; YIQ live 200/parity; root widths 1440/1180/1024/920/768/390/360 no page overflow | stop after ledger/doc sync for this single bounded wake |
+| 01 | 2026-05-16T19:39:00Z | completed | `2b91b3b` | `docs/night-runs/2026-05-16-yiq-reconciliation-pass-01.md` | clean git state; YIQ live 200/parity; root widths 1440/1180/1024/920/768/390/360 no page overflow | stop after ledger/doc sync for this single bounded wake |
 | 02 | 2026-05-16T20:04:00Z | planned | - | YIQ visual/design-system reconciliation report | findings-first report, intentional deviations vs real drift | choose one bounded fix only if evidence is clear |
 | 03 | 2026-05-16T20:29:00Z | planned | - | one bounded YIQ fix pass or no-op rationale | targeted local/browser gate | no broad redesign, no architecture rewrite |
 | 04 | 2026-05-16T20:54:00Z | planned | - | cross-project QA | four live surfaces at desktop/tablet/mobile | update only stale docs if needed |
@@ -92,7 +92,7 @@ Run a bounded YourInsideQuest reconciliation and cross-project QA sequence again
   - `docs/night-runs/2026-05-16-yiq-reconciliation-pass-01.md`
 
 ## Closeout
-- Commits:
+- Commits: `2b91b3b` (`Document YIQ pass-01 live parity baseline`)
 - Verification/deploy: YIQ live parity confirmed against current `HEAD` lineage; required root viewport matrix clean for page overflow; docs synced to shipped/live boundary-strip reality.
 - Closeout report sent: pending this pass closeout in chat
 - Residual risks: low-value copy drift remains (`Mirror` vs `Витрина`); tablet/root stack is intentionally tall after `920px` collapse and may merit later human visual judgment, not automatic redesign.
