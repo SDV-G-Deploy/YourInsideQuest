@@ -18,8 +18,16 @@ Repo-local applied docs:
 
 - `docs/applied-roadmap.md` — applied roadmap and next-pass notes for `YourInsideQuest`
 - `docs/architecture-source-of-truth.md` — relationship between this live repo and the sandbox
+- `docs/yiq-visual-reconciliation-2026-05-16.md` — latest cross-project role/evidence reconciliation
+- `docs/night-runs/2026-05-16-yiq-920-boundary-micro-pass.md` — completed 920px compact-fold follow-up
 
 Copy, layout, and mobile improvements from the sandbox should be intentionally reconciled into this repo. Do not assume the two repos are automatically synced.
+
+## Current applied status
+
+Current HEAD `bae3f14` keeps `YourInsideQuest` as the applied product surface. The root page and `fairy-journeys.html` are near-mirror product shells with the proof-boundary strip `Applied smoke · канон в reference.`.
+
+The latest reconciliation run closed the cross-project semantic drift, and the follow-up 920px micro-pass added a compact tablet/small-desktop fold. YIQ should still not be treated as canonical HOMM2 proof; canonical evidence remains in sandbox fixtures and pass reports.
 
 ## Responsive contract layer
 
@@ -29,7 +37,7 @@ The live Fairy page now carries the shared responsive helpers from the sandbox:
 - `css/components.css` owns system hooks for recipe parts: `.menu-screen-shell`, `.command-slab`, `.menu-side-rail`, `.menu-save-slot`, `.menu-route-index`, `.menu-art-layer`, plus tap/label floors for menu, archive, dossier, and ritual surfaces.
 - `fairy-journeys.html` marks the first-screen Fairy menu with those shared classes so page CSS no longer has to re-define the contract from scratch.
 
-Page-local composition remains in `css/fairy-journeys.css`: the Fairy/HoMM2 frame, columns, copy sequence, decorative scene art, and breakpoint-specific downgrade choices. Local mobile rules should hide, stack, or defer optional route/rail layers before reducing text below the shared floor.
+Page-local composition remains in `css/fairy-journeys.css`: the Fairy/HoMM2 frame, columns, copy sequence, decorative scene art, and breakpoint-specific downgrade choices. Local mobile and tablet rules should hide, stack, or defer optional route/rail layers before reducing text below the shared floor.
 
 ## Local preview
 

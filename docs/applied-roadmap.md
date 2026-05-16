@@ -15,15 +15,33 @@ Project:
 
 ---
 
+## Current status after 2026-05-16 reconciliation
+
+`YourInsideQuest` is the applied product surface. It is intentionally heavier and more menu-like than the sandbox Fairy smoke page, while the sandbox reference remains the manual/operator surface and sandbox fixtures/pass reports remain canonical proof evidence.
+
+Latest completed state:
+
+- YIQ reconciliation run closed at `250e8e0`.
+- 920px boundary micro-pass closed at `bae3f14`.
+- Both YIQ live surfaces expose the proof-boundary strip `Applied smoke · канон в reference.`.
+- The old `Mirror` self-link mismatch was normalized to `Витрина`.
+- The 561px-920px compact fold is shipped and live, including the 920px cache-busted verification recorded in `docs/night-runs/2026-05-16-yiq-920-boundary-micro-pass.md`.
+
+Current next step is documentation/proof hygiene, then selective visual tuning only if a concrete viewport still feels too slow by judgment. Do not start another broad rebuild and do not promote YIQ as canonical HOMM2 proof.
+
+The sections below are retained as historical planning context. Where they describe missing structural shell work or an unresolved emergency desktop repair, treat that as already superseded by later stabilization and the 920px micro-pass.
+
+---
+
 ## 1. Current state
 
-Сейчас проект уже живой и полезный как proof-of-direction:
+Historical baseline: проект уже живой и полезный как applied proof-of-direction:
 - menu-first композиция уже собрана;
 - mobile версия ощущается удачнее и убедительнее;
 - fairy-tale / self-discovery тема уже перенесена в HOMM2-inspired grammar;
 - есть dark wood, brass/gold chrome, parchment insets, plaques, command rail.
 
-Но:
+Earlier concerns, partly superseded by later framed-shell, reconciliation, and 920px work:
 - desktop layout пока слабее mobile;
 - main screen ещё не дотянут до по-настоящему сильного `HoMM2 main menu` ощущения;
 - не хватает более мощной outer-frame архитектуры;
@@ -32,6 +50,8 @@ Project:
 ---
 
 ## 2. Immediate priority
+
+Historical: the desktop repair and structural shell passes described here have already informed the current live shell.
 
 Следующий practical приоритет:
 
@@ -255,6 +275,8 @@ Project:
 
 ## 9. Desktop failure analysis after the framed-shell pass
 
+Historical failure analysis. The emergency desktop stabilization and later 920px compact fold are now complete; keep this section as rationale, not as the current open blocker list.
+
 Новый framed-shell pass дал нужное направление по стилю, но снова сломал desktop-адаптацию.
 
 ### Что именно это значит концептуально
@@ -420,6 +442,8 @@ Project:
 
 ## 14. Recommended next pass after stabilization
 
+Superseded as immediate next step by the completed 920px boundary micro-pass. Use this only if a future visual judgment pass finds remaining small/medium-desktop proportion drag after the shipped compact fold.
+
 ### Pass D — proportion tuning for intermediate desktop
 Цель:
 > не чинить поломку, а дотянуть пропорции small/medium desktop до более уверенного HoMM2 main menu reading.
@@ -447,6 +471,8 @@ Project:
 ---
 
 ## 15. /new invocation for the next pass
+
+Historical invocation set; prefer the current status section above for new work.
 
 - **`YourInsideQuest — proportion tuning pass for intermediate desktop after stabilization`**
 - **`YourInsideQuest — at 960–1024 make center feel wider, title less vertically heavy, side columns quieter`**

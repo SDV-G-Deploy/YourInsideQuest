@@ -6,7 +6,7 @@
 | --- | --- | --- | --- | --- | --- |
 | Resolved | YIQ root + `fairy-journeys.html` | desktop / tablet / mobile | The applied/proof boundary is now present in the first viewport as `Applied smoke · канон в reference.` on both live YIQ surfaces. | This closes the earlier medium-risk ambiguity about treating YIQ as canonical system proof. | Keep the strip; only revisit if the product shell changes materially. |
 | Resolved | YIQ root | desktop / tablet / mobile | The self-link label now matches both YIQ live surfaces as `Витрина`. | This removes a small but persistent semantic mismatch inside the mirrored applied shell. | Keep unless product naming changes again. |
-| Low | YIQ root + `fairy-journeys.html` | tablet | First screen is stable but tall: the stage runs to about 1524px on 768px tablet. | This is an intentional game-screen stack, but it makes tablet rhythm denser than Fairy/reference. | Keep as intentional for now; tune in a later proportion pass only if visual judgment says tablet feels too slow. |
+| Mitigated | YIQ root + `fairy-journeys.html` | tablet / 920 boundary | The follow-up 920px micro-pass added a 561px-920px compact fold; live cache-busted checks recorded no page overflow and shorter 920px frames. | The product shell remains intentionally information-dense, but the earlier boundary stretch is no longer the active blocker it was during reconciliation. | Keep as applied product behavior; only revisit if a later visual judgment pass finds the tablet rhythm too slow. |
 | Watch | Fairy applied live | mobile | Shell nav has internal horizontal scroll for the final nav item; page-level overflow remains zero. | This is acceptable per current mobile utility direction, but it is a useful reference point when comparing nav behavior. | No YIQ change. YIQ nav has no page overflow and no nav overflow at 390px. |
 
 ## Intentional applied deviations
@@ -18,7 +18,7 @@
 
 ## Real drift
 
-No high-confidence copy drift remains in the current YIQ shell after the self-link normalization pass. The remaining pressure is mainly proportional/layout tuning around the `920px` collapse boundary.
+No high-confidence copy drift remains in the current YIQ shell after the self-link normalization pass. The `920px` collapse-boundary pressure was mitigated by the follow-up compact-fold micro-pass at `bae3f14`; any further work should be selective visual tuning, not emergency repair.
 
 ## Evidence summary
 
