@@ -61,7 +61,7 @@ Run a bounded YourInsideQuest reconciliation and cross-project QA sequence again
 | Pass | Scheduled UTC | Status | Commit | Artifact | Verification | Next |
 | --- | --- | --- | --- | --- | --- | --- |
 | 01 | 2026-05-16T19:39:00Z | completed | `2b91b3b` | `docs/night-runs/2026-05-16-yiq-reconciliation-pass-01.md` | clean git state; YIQ live 200/parity; root widths 1440/1180/1024/920/768/390/360 no page overflow | stop after ledger/doc sync for this single bounded wake |
-| 02 | 2026-05-16T20:04:00Z | completed | pending | `docs/night-runs/2026-05-16-yiq-reconciliation-pass-02.md` | clean git state; required docs reread; live compare across YIQ/Fairy/reference at `1440x900`, `768x1024`, `390x844`; no code fixes applied | if another wake is authorized, prefer one narrow drift only |
+| 02 | 2026-05-16T20:04:00Z | completed | `47a870d` | `docs/night-runs/2026-05-16-yiq-reconciliation-pass-02.md` | clean git state; required docs reread; live compare across YIQ/Fairy/reference at `1440x900`, `768x1024`, `390x844`; no code fixes applied | if another wake is authorized, prefer one narrow drift only |
 | 03 | 2026-05-16T20:29:00Z | planned | - | one bounded YIQ fix pass or no-op rationale | targeted local/browser gate | no broad redesign, no architecture rewrite |
 | 04 | 2026-05-16T20:54:00Z | planned | - | cross-project QA | four live surfaces at desktop/tablet/mobile | update only stale docs if needed |
 | 05 | 2026-05-16T21:19:00Z | planned | - | closeout summary | commits, deploy/live status, residual risk | send concise Russian report |
@@ -110,7 +110,7 @@ Run a bounded YourInsideQuest reconciliation and cross-project QA sequence again
   - this pass explicitly stopped at reporting and classification
 
 ## Closeout
-- Commits: `2b91b3b` (`Document YIQ pass-01 live parity baseline`)
+- Commits: `2b91b3b` (`Document YIQ pass-01 live parity baseline`), `47a870d` (`Add YIQ pass-02 reconciliation report`)
 - Verification/deploy: YIQ live parity confirmed against current `HEAD` lineage; required root viewport matrix clean for page overflow; docs synced to shipped/live boundary-strip reality. Pass 02 added a findings-only report after live compare across YIQ/Fairy/reference at `1440x900`, `768x1024`, and `390x844`.
 - Closeout report sent: pending this pass closeout in chat
 - Residual risks: low-value copy drift remains (`Mirror` vs `Витрина`); YIQ small-desktop/tablet first-screen proportions still stretch earlier than the updated Fairy/reference surfaces; roadmap chronology still mixes historical and current state.
