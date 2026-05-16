@@ -9,8 +9,8 @@
 - Model: gpt-5.4
 - Delivery: none during run except blocker/closeout
 - Lock: /root/.openclaw/workspace/YourInsideQuest/tmp/night-runs/2026-05-16-yiq-reconciliation.lock
-- Max bounded work wakes: 5
-- Closeout: one final report wake after work wakes
+- Max bounded wakes: 5 total
+- Closeout: Pass 05 sends the final Russian report
 
 ## Objective
 Run a bounded YourInsideQuest reconciliation and cross-project QA sequence against the updated HOMM2 direction, keeping YIQ as the applied product surface and sandbox/reference/fixtures as proof/reference surfaces.
@@ -61,11 +61,10 @@ Run a bounded YourInsideQuest reconciliation and cross-project QA sequence again
 | Pass | Scheduled UTC | Status | Commit | Artifact | Verification | Next |
 | --- | --- | --- | --- | --- | --- | --- |
 | 01 | 2026-05-16T19:39:00Z | planned | - | live parity + viewport baseline | YIQ live HEAD/content, widths 1440/1180/1024/920/768/390/360 | stop if dirty/deploy mismatch |
-| 02 | 2026-05-16T20:04:00Z | planned | - | cross-surface visual/semantic matrix | four live surfaces comparison | decide if only docs drift remains |
-| 03 | 2026-05-16T20:29:00Z | planned | - | docs/proof-claim audit | README/roadmap/SOT/current proof claims | minimal doc sync if stale |
-| 04 | 2026-05-16T20:54:00Z | planned | - | bounded applied fix or no-op rationale | smallest local gate | only if a verified narrow drift exists |
-| 05 | 2026-05-16T21:19:00Z | planned | - | final verification sweep | local/browser smoke + git/deploy state | prepare closeout |
-| closeout | 2026-05-16T21:44:00Z | planned | - | closeout summary | commits, deploy/live status, residual risk | send Russian report |
+| 02 | 2026-05-16T20:04:00Z | planned | - | YIQ visual/design-system reconciliation report | findings-first report, intentional deviations vs real drift | choose one bounded fix only if evidence is clear |
+| 03 | 2026-05-16T20:29:00Z | planned | - | one bounded YIQ fix pass or no-op rationale | targeted local/browser gate | no broad redesign, no architecture rewrite |
+| 04 | 2026-05-16T20:54:00Z | planned | - | cross-project QA | four live surfaces at desktop/tablet/mobile | update only stale docs if needed |
+| 05 | 2026-05-16T21:19:00Z | planned | - | closeout summary | commits, deploy/live status, residual risk | send concise Russian report |
 
 ## Runs
 
