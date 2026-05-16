@@ -221,7 +221,7 @@
   padding: 0 4px 10px;
   border-bottom: 1px solid rgb(var(--gold-300) / 0.14);
   font-family: var(--font-display);
-  font-size: 10px;
+  font-size: var(--label-legible-min);
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--accent-value);
@@ -245,7 +245,7 @@
   display: block;
   margin-bottom: 6px;
   font-family: var(--font-display);
-  font-size: 10px;
+  font-size: var(--label-legible-min);
   letter-spacing: var(--tracking-eyebrow);
   text-transform: uppercase;
   color: var(--accent-value);
@@ -269,7 +269,7 @@
 }
 
 .mini-command {
-  min-height: 36px;
+  min-height: var(--tap-target-compact);
   padding: 8px 10px;
   border: 1px solid rgb(var(--gold-300) / 0.18);
   clip-path: var(--shape-interactive);
@@ -278,7 +278,7 @@
     rgb(var(--ink-950) / 0.22);
   color: var(--ink-on-night-soft);
   font-family: var(--font-display);
-  font-size: 11px;
+  font-size: var(--label-legible-min);
   letter-spacing: 0.12em;
   text-transform: uppercase;
   box-shadow:
@@ -581,7 +581,7 @@
 
 .save-slot-strip span {
   font-family: var(--font-display);
-  font-size: 10px;
+  font-size: var(--label-legible-min);
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--accent-value);
@@ -833,7 +833,7 @@
   }
 
   .game-menu-button strong {
-    font-size: 11px;
+    font-size: var(--label-legible-min);
   }
 
   .game-menu-button small {
@@ -846,7 +846,7 @@
   }
 
   .save-slot-strip strong {
-    font-size: 11px;
+    font-size: var(--label-legible-min);
   }
 
   .menu-crest {
@@ -867,8 +867,8 @@
   }
 
   .mini-command {
-    min-height: 34px;
-    font-size: 10px;
+    min-height: var(--tap-target-compact);
+    font-size: var(--label-legible-min);
     letter-spacing: 0.1em;
   }
 
@@ -885,7 +885,7 @@
   }
 
   .menu-plaque strong {
-    font-size: 11px;
+    font-size: var(--label-legible-min);
   }
 
   .menu-plaque small {
@@ -914,11 +914,16 @@
 }
 
 /* ==========================================================================
-   HoMM2 main menu escalation pass
+   HoMM2 main menu composition
+   --------------------------------------------------------------------------
+   Uses shared responsive contract hooks from components.css. This file owns
+   the Fairy page composition, decorative frame, and breakpoint-specific
+   downgrade choices after the system tap/label floors are satisfied.
    ========================================================================== */
 
 .homm2-main-menu-stage {
   display: block;
+  --fairy-menu-label-floor: var(--label-legible-min);
   padding: clamp(18px, 2.4vw, 26px);
 }
 
@@ -1362,7 +1367,7 @@
 .homm2-main-menu-stage .plaque-ribbon strong,
 .homm2-main-menu-stage .plaque-inscription {
   font-family: var(--font-display);
-  font-size: 10px;
+  font-size: var(--fairy-menu-label-floor);
   font-weight: 700;
   letter-spacing: 0.16em;
   line-height: 1.35;
@@ -1424,7 +1429,7 @@
 
 .homm2-main-menu-stage .game-menu-button small {
   margin-top: 1px;
-  font-size: 11px;
+  font-size: var(--fairy-menu-label-floor);
   line-height: 1.24;
 }
 
@@ -1487,12 +1492,12 @@
 }
 
 .homm2-main-menu-stage .menu-plaque strong {
-  font-size: 11px;
+  font-size: var(--fairy-menu-label-floor);
   line-height: 1.24;
 }
 
 .homm2-main-menu-stage .menu-plaque small {
-  font-size: 11px;
+  font-size: var(--fairy-menu-label-floor);
   line-height: 1.24;
 }
 
@@ -1713,7 +1718,7 @@
   .homm2-main-menu-stage .status-box strong,
   .homm2-main-menu-stage .command-entry strong,
   .homm2-main-menu-stage .mini-command {
-    font-size: 11px;
+    font-size: var(--fairy-menu-label-floor);
     letter-spacing: 0.035em;
   }
 
@@ -1822,7 +1827,7 @@
   }
 
   .homm2-main-menu-stage .plaque-inscription {
-    font-size: 9px;
+    font-size: var(--fairy-menu-label-floor);
     letter-spacing: 0.12em;
   }
 }
@@ -1928,14 +1933,14 @@
 
   .homm2-main-menu-stage .game-menu-button small {
     max-width: 100%;
-    font-size: 11px;
+    font-size: var(--fairy-menu-label-floor);
     line-height: 1.36;
     white-space: normal;
     overflow-wrap: normal;
   }
 
   .homm2-main-menu-stage .save-slot-strip strong {
-    font-size: 11px;
+    font-size: var(--fairy-menu-label-floor);
   }
 
   .homm2-main-menu-stage .menu-plaques {
@@ -1957,7 +1962,7 @@
   }
 
   .homm2-main-menu-stage .menu-plaque strong {
-    font-size: 10px;
+    font-size: var(--fairy-menu-label-floor);
     line-height: 1.28;
   }
 
@@ -1982,12 +1987,12 @@
 
   .homm2-main-menu-stage .status-label {
     margin-bottom: 4px;
-    font-size: 9px;
+    font-size: var(--fairy-menu-label-floor);
     letter-spacing: 0.12em;
   }
 
   .homm2-main-menu-stage .status-box strong {
-    font-size: 10px;
+    font-size: var(--fairy-menu-label-floor);
     line-height: 1.32;
     letter-spacing: 0.035em;
   }
@@ -2069,7 +2074,7 @@
 
   .homm2-main-menu-stage .plaque-inscription,
   .homm2-main-menu-stage .plaque-ribbon strong {
-    font-size: 9px;
+    font-size: var(--fairy-menu-label-floor);
   }
 
   .homm2-main-menu-stage .menu-plate-shell {
@@ -2150,5 +2155,139 @@
 
   .homm2-main-menu-stage .side-column {
     align-self: stretch;
+  }
+}
+
+/* Pass 1 compact fold: keep the HoMM2 shell, but make mobile read as a menu
+   first. Route index is deferred below mobile's first decision moment. */
+
+@media (max-width: 560px) {
+  .homm2-main-menu-stage {
+    padding: 12px;
+  }
+
+  .homm2-main-menu-stage .menu-frame-shell {
+    padding-top: 28px;
+    gap: 10px;
+  }
+
+  .homm2-main-menu-stage .center-top-cartouche {
+    gap: 6px;
+  }
+
+  .homm2-main-menu-stage .menu-crest {
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
+  }
+
+  .homm2-main-menu-stage .menu-title-cartouche {
+    padding: 8px 12px 10px;
+  }
+
+  .homm2-main-menu-stage .menu-title-cartouche .eyebrow,
+  .homm2-main-menu-stage .plaque-ribbon {
+    display: none;
+  }
+
+  .homm2-main-menu-stage .menu-title-cartouche h1 {
+    max-width: 13ch;
+    margin-bottom: 6px;
+    font-size: clamp(28px, 8.6vw, 36px);
+    line-height: 1;
+  }
+
+  .homm2-main-menu-stage .menu-title-cartouche .lead {
+    font-size: 13px;
+    line-height: 1.34;
+  }
+
+  .homm2-main-menu-stage .plaque-inscription {
+    display: none;
+  }
+
+  .homm2-main-menu-stage .menu-plate-shell {
+    padding: 3px;
+  }
+
+  .homm2-main-menu-stage .menu-plate-body {
+    padding: 12px;
+  }
+
+  .homm2-main-menu-stage .game-menu-stack {
+    width: 100%;
+    gap: 6px;
+    padding: 6px;
+  }
+
+  .homm2-main-menu-stage .game-menu-button {
+    grid-template-columns: 32px minmax(0, 1fr);
+    gap: 8px;
+    min-height: 48px;
+    padding: 8px 9px;
+  }
+
+  .homm2-main-menu-stage .game-menu-button.primary {
+    grid-template-columns: 34px minmax(0, 1fr);
+    min-height: 56px;
+    padding: 9px;
+  }
+
+  .homm2-main-menu-stage .game-menu-glyph {
+    width: 32px;
+    height: 32px;
+  }
+
+  .homm2-main-menu-stage .game-menu-button:not(.primary) small {
+    display: none;
+  }
+
+  .homm2-main-menu-stage .game-menu-button strong,
+  .homm2-main-menu-stage .game-menu-button.primary strong {
+    font-size: 12px;
+    line-height: 1.24;
+  }
+
+  .homm2-main-menu-stage .game-menu-button.primary small {
+    font-size: var(--fairy-menu-label-floor);
+    line-height: 1.25;
+  }
+
+  .homm2-main-menu-stage .supporting-lore-strip {
+    gap: 8px;
+  }
+
+  .homm2-main-menu-stage .save-slot-strip {
+    padding: 8px 10px;
+  }
+
+  .homm2-main-menu-stage .menu-plaques {
+    display: none;
+  }
+
+  .homm2-main-menu-stage .status-rail,
+  .homm2-main-menu-stage .command-rail-shell {
+    gap: 7px;
+    padding: 10px 9px;
+  }
+
+  .homm2-main-menu-stage .status-box strong {
+    font-size: var(--fairy-menu-label-floor);
+  }
+
+  .homm2-main-menu-stage .mini-command {
+    min-height: 42px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 380px) {
+  .homm2-main-menu-stage .menu-title-cartouche .lead {
+    display: none;
+  }
+
+  .homm2-main-menu-stage .menu-title-cartouche h1 {
+    max-width: 12ch;
+    font-size: clamp(27px, 8.2vw, 32px);
   }
 }

@@ -15,7 +15,10 @@
 * { box-sizing: border-box; }
 *::before,
 *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  background: #0b0908;
+}
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -538,7 +541,7 @@ h3::first-letter {
 }
 .archive-label {
   color: var(--accent-value-mute);
-  font-size: 10px;
+  font-size: var(--label-legible-min);
   border-color: rgb(var(--gold-700) / 0.34);
 }
 .wax-seal {
@@ -674,6 +677,7 @@ h3::first-letter {
   position: relative;
   isolation: isolate;
   overflow: hidden;
+  min-height: var(--tap-target-min);
   font-family: var(--font-display);
   font-size: var(--text-caption);
   font-weight: 700;
@@ -827,7 +831,7 @@ h3::first-letter {
   padding: 0 4px 10px;
   border-bottom: 1px solid rgb(var(--gold-300) / 0.14);
   font-family: var(--font-display);
-  font-size: 10px;
+  font-size: var(--label-legible-min);
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--accent-value);
@@ -908,7 +912,7 @@ h3::first-letter {
     inset 0 -2px 0 rgb(var(--ink-950) / 0.28),
     0 8px 0 rgb(var(--ink-950) / 0.12);
   font-family: var(--font-display);
-  font-size: 11px;
+  font-size: var(--label-legible-min);
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--accent-value);
@@ -942,7 +946,7 @@ h3::first-letter {
   display: block;
   margin-bottom: 6px;
   font-family: var(--font-display);
-  font-size: 10px;
+  font-size: var(--label-legible-min);
   letter-spacing: var(--tracking-eyebrow);
   text-transform: uppercase;
   color: var(--accent-value);
@@ -968,7 +972,7 @@ h3::first-letter {
 
 .dossier-ledger-strip span {
   font-family: var(--font-display);
-  font-size: 11px;
+  font-size: var(--label-legible-min);
   line-height: 1.35;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -983,6 +987,83 @@ h3::first-letter {
   margin-top: var(--space-4);
   padding-top: var(--space-4);
   border-top: 1px solid rgb(var(--mana-200) / 0.14);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive contract hooks
+   --------------------------------------------------------------------------
+   System floors for recipe-like screens. Page-local CSS may arrange recipe
+   parts, but should not lower tap targets or label legibility to solve layout
+   pressure.
+   -------------------------------------------------------------------------- */
+
+.menu-screen-shell,
+.menu-frame-shell,
+.menu-center-mount,
+.menu-plate-shell,
+.menu-plate-body,
+.menu-side-rail,
+.command-slab,
+.menu-save-slot,
+.menu-route-index {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.menu-screen-shell {
+  --recipe-first-screen-budget: var(--first-screen-menu);
+  --recipe-primary-visible: ".command-slab";
+  --recipe-secondary-visible: ".menu-save-slot";
+  --recipe-collapse-order: "art route-index rails save-slot command-slab";
+}
+
+.menu-side-rail { --recipe-collapse-rank: 3; }
+.command-slab  { --recipe-collapse-rank: 5; }
+.menu-save-slot { --recipe-collapse-rank: 4; }
+.menu-route-index { --recipe-collapse-rank: 2; }
+.menu-art-layer { --recipe-collapse-rank: 1; }
+
+.command-slab :is(a, button, [role="button"]),
+.menu-route-index :is(a, button, [role="button"]),
+.archive-rail :is(a, button, [role="button"]),
+.ritual-panel :is(a, button, [role="button"]) {
+  min-height: var(--tap-target-min);
+}
+
+.menu-route-index,
+.archive-rail,
+.ritual-panel,
+.parchment-object {
+  --recipe-label-floor: var(--label-legible-min);
+}
+
+.parchment-object {
+  --recipe-first-screen-budget: var(--first-screen-dossier);
+  --recipe-collapse-order: "notes side-matter metadata archive-rail parchment";
+}
+
+.ritual-panel {
+  --recipe-first-screen-budget: var(--first-screen-ritual);
+  --recipe-collapse-order: "aura protocol ledger copy actions";
+}
+
+.menu-route-index {
+  --recipe-first-screen-budget: var(--first-screen-route-board);
+  --recipe-collapse-order: "annotations filters progress secondary-routes current-next";
+}
+
+@media (max-width: 560px) {
+  .menu-side-rail { opacity: 0.86; }
+
+  .command-slab :is(a, button, [role="button"]),
+  .ritual-panel :is(a, button, [role="button"]) {
+    min-height: var(--tap-target-min);
+  }
+
+  .menu-route-index :is(a, button, [role="button"]),
+  .archive-rail :is(a, button, [role="button"]) {
+    min-height: var(--tap-target-compact);
+  }
 }
 
 /* ==========================================================================
@@ -1047,16 +1128,16 @@ h3::first-letter {
   .ambient { display: none; }
   .site-header { gap: var(--space-3); padding-bottom: 6px; }
   .brand-mark { gap: 10px; }
-  .brand-mark strong { font-size: 11px; letter-spacing: 0.1em; }
+  .brand-mark strong { font-size: var(--label-legible-min); letter-spacing: 0.1em; }
   .brand-mark em     { font-size: 12px; }
   .brand-sigil       { width: 36px; height: 36px; }
   .scene-nav { gap: 5px; padding-bottom: 3px; }
   .scene-nav a {
     flex: 0 0 auto;
-    min-height: 34px;
-    padding: 6px 8px 7px;
-    font-size: 11px;
-    letter-spacing: 0.02em;
+    min-height: var(--tap-target-compact);
+    padding: 7px 10px 8px;
+    font-size: 12px;
+    letter-spacing: 0.025em;
   }
   .scene             { padding: 16px 0 38px; }
   .hero-frame,
@@ -1076,7 +1157,7 @@ h3::first-letter {
     gap: 7px;
     margin-bottom: 10px;
     padding-bottom: 5px;
-    font-size: 10px;
+    font-size: var(--label-legible-min);
     letter-spacing: 0.12em;
   }
   .eyebrow::before,
@@ -1139,10 +1220,10 @@ h3::first-letter {
   .archive-rail { gap: 8px; padding: 14px 12px; }
   .archive-rail-head { padding: 0 3px 8px; }
   .archive-rail-item { grid-template-columns: 30px 1fr; gap: 8px; padding: 9px 8px; }
-  .archive-rail-item span { font-size: 11px; }
+  .archive-rail-item span { font-size: var(--label-legible-min); }
   .archive-rail-item strong {
     max-width: none;
-    font-size: 11px;
+    font-size: var(--label-legible-min);
     line-height: 1.28;
     letter-spacing: 0.04em;
   }
@@ -1175,16 +1256,16 @@ h3::first-letter {
 
 @media (max-width: 400px) {
   .scene-nav a {
-    padding: 6px 7px 7px;
-    font-size: 10px;
+    padding: 7px 9px 8px;
+    font-size: 12px;
     letter-spacing: 0.015em;
   }
 }
 
 @media (max-width: 380px) {
   .scene-nav a {
-    padding: 6px 6px 7px;
-    font-size: 10px;
+    padding: 7px 8px 8px;
+    font-size: 12px;
     letter-spacing: 0.01em;
   }
   h1 { font-size: clamp(34px, 12vw, 44px); }

@@ -126,7 +126,7 @@
   --ornament-gap: 14px;
 
   /* Heraldic Menu — menu plaques, crest frames, command depth */
-  --menu-plaque-height: 42px;
+  --menu-plaque-height: var(--tap-target-min);
   --menu-plaque-padding-x: 16px;
   --menu-plaque-border: 1px;
   --menu-plaque-inset: 2px;
@@ -151,6 +151,16 @@
   --measure-intro: 58ch;
   --measure-note: 30ch;
   --measure-ritual: 34ch;
+
+  /* Responsive contract floors */
+  --tap-target-min: 44px;
+  --tap-target-compact: 40px;
+  --label-legible-min: 12px;
+  --fold-safe-gap: var(--space-5);
+  --first-screen-menu: 100svh;
+  --first-screen-dossier: 100svh;
+  --first-screen-ritual: 100svh;
+  --first-screen-route-board: 100svh;
 
   /* ==========================================================================
      LAYER 3 — SEMANTIC TOKENS
@@ -251,7 +261,7 @@
 
 @media (max-width: 560px) {
   :root {
-    --page:      min(100vw - 20px, 1180px);
+    --page:      min(1180px, calc(100vw - 20px));
     --radius-xl: 16px;
     --radius-lg: 12px;
   }
@@ -259,6 +269,6 @@
 
 @media (max-width: 380px) {
   :root {
-    --page: min(100vw - 16px, 1180px);
+    --page: min(1180px, calc(100vw - 16px));
   }
 }

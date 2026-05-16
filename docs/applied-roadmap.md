@@ -211,6 +211,48 @@ Project:
 
 ---
 
+## Next documentation-first step for /new
+
+Перед следующим implementation pass сначала оформить и зафиксировать applied architecture contract внутри `YourInsideQuest`.
+
+### Что именно зафиксировать
+1. **Layer split inside applied repo**
+   - reusable system rules;
+   - applied HoMM2 shell rules;
+   - responsive stabilization rules.
+
+2. **Applied shell contract**
+   - явно описать зону ответственности для:
+     - `.homm2-main-menu-stage`
+     - `.menu-frame-shell`
+     - side columns
+     - center mount
+     - desktop / laptop / tablet / mobile behavior
+
+3. **Safe sync rule**
+   - любые изменения, затрагивающие shell, breakpoints, grid, min-height, padding, overflow, не считать safe-copy из sandbox;
+   - переносить их только как deliberate applied adaptation.
+
+4. **Sync lanes**
+   - tokens
+   - reusable components
+   - page/layout composition
+
+5. **Pre-push QA checklist**
+   - widths: `1440 / 1180 / 1024 / 921 / 920 / 768 / 390 / 360`
+   - no horizontal overflow
+   - center remains dominant
+   - side rails support hierarchy
+   - mobile remains legible
+
+### Recommended next pass
+Следующий проход должен быть не visual polish, а **contract-clarification / structure pass**:
+- отделить и назвать applied-shell rules;
+- сделать responsive contract явным;
+- подготовить безопасную основу для будущих sandbox sync passes.
+
+---
+
 ## 9. Desktop failure analysis after the framed-shell pass
 
 Новый framed-shell pass дал нужное направление по стилю, но снова сломал desktop-адаптацию.
