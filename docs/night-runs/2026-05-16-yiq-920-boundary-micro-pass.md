@@ -40,6 +40,14 @@ Local Chromium/CDP against `http://127.0.0.1:4180/index.html`:
 Additional gate:
 
 - `git diff --check` clean
+- GitHub Pages workflow for `a481bab` completed successfully
+- live CSS fetched with the micro-pass marker present
+- live root with cache-busted CSS:
+  - `920`: no horizontal overflow; frame height `963px`
+  - `768`: no horizontal overflow; frame height `1033px`
+  - `390`: no horizontal overflow; mobile compact fold unchanged
+- live `fairy-journeys.html` with cache-busted CSS:
+  - `920`: no horizontal overflow; frame height `974px`
 
 ## Residual Risk
 

@@ -193,7 +193,11 @@ Run a bounded YourInsideQuest reconciliation and cross-project QA sequence again
   - `768`: no horizontal overflow; frame height `1033px`
   - `390`: no horizontal overflow; mobile compact fold remains separate
   - `921` and `1024`: no horizontal overflow; desktop fold remains active
-- next: verify deployed live root and YIQ fairy after push
+- deploy/live verification:
+  - GitHub Pages workflow for `a481bab` completed successfully
+  - live CSS contains the micro-pass marker
+  - live root with cache-busted CSS: `920` frame `963px`, `768` frame `1033px`, `390` unchanged in intent; no horizontal overflow
+  - live `fairy-journeys.html` with cache-busted CSS: `920` frame `974px`; no horizontal overflow
 
 ### Pass 05 — 2026-05-16 21:19 UTC
 
