@@ -65,3 +65,16 @@ if (localNavTargets.length > 0) {
   window.addEventListener('load', syncActiveNav, { once: true });
   requestAnimationFrame(syncActiveNav);
 }
+
+// Rail/utility commands: scroll to a section and move focus there for keyboard users.
+document.addEventListener('click', (event) => {
+  const trigger = event.target.closest('[data-scroll]');
+  if (!trigger) return;
+  const target = document.querySelector(trigger.dataset.scroll);
+  if (!target) return;
+  event.preventDefault();
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+  if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
+  target.focus({ preventScroll: true });
+});

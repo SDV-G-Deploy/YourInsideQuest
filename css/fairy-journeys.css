@@ -409,7 +409,7 @@
 
 .game-menu-button.primary {
   background:
-    linear-gradient(180deg, #fff0c2 0%, #f4d37c 18%, rgb(var(--gold-500)) 54%, rgb(var(--gold-700)) 100%),
+    linear-gradient(180deg, #fff0c2 0%, #f4d37c 18%, rgb(var(--gold-500)) 62%, #b97a22 100%),
     linear-gradient(90deg, rgb(var(--parchment-50) / 0.22), transparent 18%, transparent 82%, rgb(var(--gold-700) / 0.18));
 }
 
@@ -1437,7 +1437,7 @@
 
 .homm2-main-menu-stage .game-menu-button.primary {
   background:
-    linear-gradient(180deg, #f4dca4 0%, #d4a84b 22%, rgb(var(--gold-700)) 70%, #6f4b23 100%),
+    linear-gradient(180deg, #f4dca4 0%, #e0b453 30%, rgb(var(--gold-500)) 72%, #b4782a 100%),
     linear-gradient(90deg, rgb(var(--parchment-50) / 0.16), transparent 18%, transparent 82%, rgb(var(--gold-700) / 0.16));
 }
 

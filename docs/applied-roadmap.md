@@ -33,6 +33,37 @@ The sections below are retained as historical planning context. Where they descr
 
 ---
 
+## Demo-complete pass (2026-10-29) — done
+
+Goal: turn the menu shell into a convincing, playable product demo without a layout rebuild.
+
+Done:
+- [x] **Playable journey end to end** — 4 chapter choices (16 options, each tied to one of four archetypes)
+  → campfire reflection (prompt adapts to the leading archetype, optional ≤140-char phrase)
+  → result card (name = leader title + runner-up epithet, strength, shadow, companion, weekly micro-quest, balance bars).
+- [x] **Save / share** — card re-drawn on `<canvas>` (1080px wide, height adapts) → PNG download; Web Share with file on mobile, text+link fallback.
+- [x] **Persistence** — `localStorage` slot (`yiq.journey.v1`); `Продолжить` resumes; save-slot strip shows progress/name; `#journey` deep link.
+- [x] **Dead controls wired** — mini-commands, `Карта команды`, `К карте`, `Принять имя`.
+- [x] **Accessibility** — skip link; native `<dialog>` (focus trap, Esc, focus return); inset focus ring for clip-path controls
+  (the global outline was being clipped); decorative glyphs `aria-hidden`; keys 1–4; reduced-motion; contrast fixes
+  (parchment archive labels, primary command sublabel). axe-core WCAG 2 A/AA: 0 violations at 390/1280 incl. dialog.
+- [x] **Meta** — product description, canonical, theme-color, SVG favicon, OG/Twitter tags, original 1200×630 OG image.
+- [x] **Performance** — scripts `defer`; no new runtime dependencies; all art inline SVG/CSS/canvas.
+- [x] **Copy** — designer-facing copy in lead, trail log and threshold replaced with product-facing copy; footer disclaimer.
+- [x] **Docs** — `docs/DEMO_SCRIPT.md`, README section.
+
+Verification: Playwright at 390×844 and 1280×800 — full flow (choices → reflection → result → PNG download → Esc → reload resume),
+no console errors, no horizontal overflow, focus lands on chapter heading each step.
+
+### Next candidates (not done)
+- Self-host Cinzel/Lora subsets (Cinzel has no Cyrillic; headings fall back to a serif) or pick a Cyrillic display face.
+- More journeys (the other menu entries could become separate routes) and an EN locale.
+- Ambient sound toggle (off by default) and a short card-reveal flourish.
+- Compress `assets/og-image.png` (≈290 KB) and add a `<link rel="preload">` for the first font.
+- Optional: fold the `Applied smoke · канон в reference.` strip out of the public demo build if it confuses non-team viewers.
+
+---
+
 ## 1. Current state
 
 Historical baseline: проект уже живой и полезный как applied proof-of-direction:
