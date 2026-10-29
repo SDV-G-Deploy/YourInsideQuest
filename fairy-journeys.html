@@ -6,8 +6,23 @@
     <title>Your Inside Quest · Сказочные странствия</title>
     <meta
       name="description"
-      content="HOMM2-inspired menu-first demo about self-discovery through compact fairy-tale commands and chapter routes."
+      content="Сказочный поход к себе: четыре главы, привал у костра и карточка с твоим сказочным именем. Меню в духе старых фэнтези-стратегий."
     />
+    <meta name="theme-color" content="#17100c" />
+    <meta name="color-scheme" content="dark" />
+    <link rel="canonical" href="https://sdv-g-deploy.github.io/YourInsideQuest/fairy-journeys.html" />
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:site_name" content="Your Inside Quest" />
+    <meta property="og:title" content="Your Inside Quest · Сказочные странствия" />
+    <meta property="og:description" content="Четыре главы, привал у костра и карточка с твоим сказочным именем. Около трёх минут." />
+    <meta property="og:url" content="https://sdv-g-deploy.github.io/YourInsideQuest/fairy-journeys.html" />
+    <meta property="og:image" content="https://sdv-g-deploy.github.io/YourInsideQuest/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Латунная рамка с названием Your Inside Quest и четырьмя путями похода" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,10 +33,12 @@
     <link rel="stylesheet" href="./css/components.css" />
     <link rel="stylesheet" href="./css/scenes.css" />
     <link rel="stylesheet" href="./css/fairy-journeys.css" />
+    <link rel="stylesheet" href="./css/journey.css" />
   </head>
   <body>
-    <div class="ambient ambient-gold"></div>
-    <div class="ambient ambient-mana"></div>
+    <a class="skip-link" href="#fairy-menu-title">К главному меню</a>
+    <div class="ambient ambient-gold" aria-hidden="true"></div>
+    <div class="ambient ambient-mana" aria-hidden="true"></div>
 
     <header class="site-header" aria-label="Сказочное меню">
       <a class="brand-mark" href="#menu-shell" aria-label="К главному меню">
@@ -100,9 +117,9 @@
                     <strong>Лесные врата</strong>
                     <span></span>
                   </div>
-                  <h1 id="fairy-menu-title">В сказку за своим именем.</h1>
+                  <h1 id="fairy-menu-title" tabindex="-1">В сказку за своим именем.</h1>
                   <p class="lead">
-                    Меню сказочной игры: дерево, латунь, пергамент и дорога к главе, где выбор ведёт к новой роли.
+                    Короткий поход из четырёх глав: выбирай тропы, отдохни у костра и унеси с собой своё сказочное имя.
                   </p>
                   <p class="plaque-inscription">глава I · тихая отвага · компас пробуждён</p>
                   <p class="applied-boundary-strip">
@@ -115,18 +132,18 @@
                 <div class="menu-plate-shadow" aria-hidden="true"></div>
                 <div class="menu-plate-body">
                   <div class="game-menu-stack command-slab" role="navigation" aria-label="Главные игровые команды">
-                    <a class="game-menu-button primary" href="#final-threshold">
+                    <a class="game-menu-button primary" href="#journey" data-journey="start">
                       <span class="game-menu-glyph">✦</span>
                       <span>
                         <strong>Начать путь</strong>
-                        <small>первая развилка</small>
+                        <small>4 главы · ~3 минуты</small>
                       </span>
                     </a>
-                    <a class="game-menu-button" href="#trail-log">
+                    <a class="game-menu-button" href="#journey" data-journey="resume">
                       <span class="game-menu-glyph">II</span>
                       <span>
                         <strong>Продолжить</strong>
-                        <small>текущий след</small>
+                        <small>слот A · свой след</small>
                       </span>
                     </a>
                     <a class="game-menu-button" href="#story-dossier">
@@ -211,12 +228,12 @@
                     <strong>выбор главы</strong>
                   </div>
                   <div class="mini-command-grid" aria-label="Быстрые команды">
-                    <button type="button" class="mini-command">загрузка</button>
-                    <button type="button" class="mini-command">карта</button>
-                    <button type="button" class="mini-command">знания</button>
-                    <button type="button" class="mini-command">выход</button>
+                    <button type="button" class="mini-command" data-journey="resume">слот</button>
+                    <button type="button" class="mini-command" data-scroll="#trail-log">карта</button>
+                    <button type="button" class="mini-command" data-scroll="#story-dossier">знания</button>
+                    <button type="button" class="mini-command" data-scroll="#final-threshold">порог</button>
                   </div>
-                  <button type="button" class="btn btn-quiet rail-button">Карта команды</button>
+                  <button type="button" class="btn btn-quiet rail-button" data-scroll="#trail-log">Карта команды</button>
                 </div>
               </div>
               <div class="column-foot" aria-hidden="true"></div>
@@ -231,8 +248,8 @@
           <p class="eyebrow">журнал пути · карта глав</p>
           <h2 id="trail-log-title">Карта сказочного выбора.</h2>
           <p>
-            Главы собраны как маршрутный журнал: остановка, роль, урок и эмоциональная погода.
-            Рамки и плакетки ведут взгляд быстрее обычных веб-блоков.
+            Каждая глава — одна развилка и один вопрос о тебе. Ответов «правильно» нет:
+            мир запоминает, что ты выбираешь, и в конце называет тебя по-новому.
           </p>
         </div>
 
@@ -277,23 +294,23 @@
               </div>
             </div>
 
-            <div class="dossier-ledger-strip" aria-label="Сигналы карты">
-              <span>дерево · латунь · пергамент</span>
-              <span>ступенчатый край</span>
-              <span>главное меню</span>
+            <div class="dossier-ledger-strip" aria-label="Что ждёт в походе">
+              <span>4 главы · 16 развилок</span>
+              <span>привал у костра</span>
+              <span>карточка-картинка</span>
             </div>
           </article>
 
           <aside class="story-panel">
             <div class="note-card high-note">
-              <p class="archive-label">Сказочная логика</p>
-              <strong>Архетип вместо контента.</strong>
-              <span>Мир различает маску, зов, страх и желание.</span>
+              <p class="archive-label">Четыре спутника</p>
+              <strong>Хранитель, Странник, Звездочёт, Творец.</strong>
+              <span>Твои выборы собирают их баланс — и подсказывают твою силу и тень.</span>
             </div>
             <div class="note-card low-note">
-              <p class="archive-label">Правило UI</p>
-              <strong>Сначала рамка.</strong>
-              <span>Декор работает после сильной меню-структуры.</span>
+              <p class="archive-label">Тихий привал</p>
+              <strong>Ответы остаются у тебя.</strong>
+              <span>Никаких аккаунтов и серверов: прогресс хранится только в этом браузере.</span>
             </div>
           </aside>
         </div>
@@ -310,8 +327,8 @@
             <p class="eyebrow">порог выбора · финальное принятие</p>
             <h2 id="threshold-title">Отряд собран. Кем входишь в сказку?</h2>
             <p>
-              Финальный блок — экран подтверждения: немного магии, золотое давление
-              и ощущение, что выбор меняет роль игрока.
+              Пройди четыре главы, остановись у костра и прими имя, которое сложилось
+              из твоих выборов. Карточку можно сохранить картинкой или отправить другу.
             </p>
           </div>
 
@@ -341,8 +358,8 @@
             </div>
 
             <div class="ceremony-actions">
-              <button type="button" class="btn btn-quiet">К карте</button>
-              <button type="button" class="btn btn-ceremonial">Принять имя</button>
+              <button type="button" class="btn btn-quiet" data-scroll="#trail-log">К карте</button>
+              <button type="button" class="btn btn-ceremonial" data-journey="start">Принять имя</button>
             </div>
           </div>
         </div>
@@ -351,11 +368,13 @@
 
     <footer class="board-footer">
       <p>
-        Демо сказочного меню о поиске себя: дерево, латунь, пергамент,
-        лианы, плакетки и статусные рейки вместо обычного лендинга.
+        Your Inside Quest — демо сказочного похода к себе. Это не психологический тест
+        и не диагноз, а игра-зеркало. Вся графика оригинальная (CSS, SVG, canvas);
+        стилистика вдохновлена старыми фэнтези-стратегиями и не связана с их правообладателями.
       </p>
     </footer>
 
-    <script src="./script.js"></script>
+    <script src="./script.js" defer></script>
+    <script src="./js/journey.js" defer></script>
   </body>
 </html>
