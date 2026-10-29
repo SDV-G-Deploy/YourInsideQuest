@@ -45,6 +45,9 @@
 
 html.journey-open { overflow: hidden; }
 
+/* Contrast: gold labels on parchment need the deep gold tone (≥4.5:1). */
+.parchment-object .archive-label { color: rgb(var(--gold-700)); border-color: rgb(var(--gold-700) / 0.4); }
+
 /* ---------------------------------------------------------------- dialog */
 .journey-dialog {
   width: min(720px, calc(100vw - 20px));
